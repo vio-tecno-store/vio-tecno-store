@@ -1,0 +1,2958 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIO TECNO STORE | Cosplay & 3D Props Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#07070c',
+                        darkCard: '#10101a',
+                        darkInput: '#161625',
+                        neonPurple: '#8b5cf6',
+                        neonCyan: '#06b6d4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #07070c;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .cyber-grid {
+            background-image: radial-gradient(rgba(139, 92, 246, 0.16) 1px, transparent 1px);
+            background-size: 26px 26px;
+        }
+        .glass-panel {
+            background: rgba(16, 16, 26, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+        }
+        .neon-glow-purple {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.35);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07070c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2e1065;
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7c3aed;
+        }
+
+        /* ==================== LIGHT THEME (FONDO BLANCO) OVERRIDES ==================== */
+        html.light body {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        html.light .cyber-grid {
+            background-image: radial-gradient(rgba(124, 58, 237, 0.14) 1px, transparent 1px);
+        }
+        html.light .glass-panel {
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(139, 92, 246, 0.22);
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
+        }
+        html.light header.glass-panel {
+            background: rgba(255, 255, 255, 0.94);
+        }
+        html.light .bg-darkBg,
+        html.light .bg-darkBg\/90,
+        html.light .bg-darkBg\/85 {
+            background-color: #ffffff !important;
+        }
+        html.light .bg-darkCard,
+        html.light .bg-darkCard\/90 {
+            background-color: #ffffff !important;
+            border-color: #e2e8f0 !important;
+        }
+        html.light .bg-darkInput {
+            background-color: #f1f5f9 !important;
+            border-color: #cbd5e1 !important;
+            color: #0f172a !important;
+        }
+        html.light .placeholder-card-box {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e0f2fe 100%) !important;
+            border-color: #ddd6fe !important;
+        }
+        html.light .text-white {
+            color: #0f172a !important;
+        }
+        html.light .hero-gradient-text {
+            background-image: linear-gradient(to right, #6d28d9, #7c3aed, #0284c7) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+        html.light .text-gray-200,
+        html.light .text-gray-300 {
+            color: #334155 !important;
+        }
+        html.light .text-gray-400 {
+            color: #64748b !important;
+        }
+        html.light .text-neonCyan {
+            color: #0284c7 !important;
+        }
+        html.light .border-gray-800,
+        html.light .border-gray-700,
+        html.light .border-purple-900\/30,
+        html.light .border-purple-900\/40 {
+            border-color: #e2e8f0 !important;
+        }
+        html.light .from-purple-950\/25 {
+            --tw-gradient-from: rgba(139, 92, 246, 0.08) var(--tw-gradient-from-position) !important;
+        }
+        html.light .to-darkBg {
+            --tw-gradient-to: #f8fafc var(--tw-gradient-to-position) !important;
+        }
+        html.light .bg-purple-950,
+        html.light .bg-purple-950\/70 {
+            background-color: #f3e8ff !important;
+            color: #6b21a8 !important;
+        }
+        html.light .text-purple-200,
+        html.light .text-purple-300 {
+            color: #6b21a8 !important;
+        }
+        html.light .bg-cyan-950\/30,
+        html.light .bg-cyan-950\/40,
+        html.light .bg-cyan-950\/70 {
+            background-color: #e0f2fe !important;
+            color: #0369a1 !important;
+        }
+        html.light .bg-neonPurple,
+        html.light .bg-gradient-to-r.from-neonPurple,
+        html.light .bg-gradient-to-r.from-purple-900\/90,
+        html.light .bg-gradient-to-r.from-purple-950 {
+            color: #ffffff !important;
+        }
+        html.light .bg-neonPurple.text-white,
+        html.light button.bg-neonPurple,
+        html.light a.from-neonPurple {
+            color: #ffffff !important;
+        }
+        html.light ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        html.light ::-webkit-scrollbar-thumb {
+            background: #c4b5fd;
+        }
+    </style>
+</head>
+<body class="cyber-grid min-h-screen flex flex-col selection:bg-neonPurple selection:text-white">
+
+    <!-- Admin Session Active Top Bar (Hidden unless logged in as Admin) -->
+    <div id="admin-active-bar" class="hidden bg-gradient-to-r from-purple-950 via-indigo-950 to-cyan-950 border-b border-neonCyan/40 px-4 py-2 text-xs">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span class="font-bold text-neonCyan">MODO ADMINISTRADOR ACTIVO</span>
+                <span class="text-gray-300 hidden sm:inline">| Sesi贸n: vio2015@outlook.com</span>
+                <span id="cloud-sync-badge" class="px-2 py-0.5 rounded bg-gray-800 text-[10px] font-mono text-amber-300">Modo Local</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button type="button" onclick="openAdminModal()" class="px-3 py-1 rounded-lg bg-neonPurple hover:bg-purple-600 text-white font-bold transition">
+                    鈿欙笍 Abrir Panel de Control
+                </button>
+                <button type="button" onclick="adminLogout()" class="px-3 py-1 rounded-lg bg-gray-800 hover:bg-red-900/70 text-gray-200 font-semibold transition">
+                    Salir Admin
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-purple-900/90 via-indigo-900/90 to-cyan-900/90 border-b border-purple-500/30 py-2 px-4 text-center text-xs font-medium text-purple-100">
+        馃敟 Env铆os a todo M茅xico v铆a <span class="font-bold text-neonCyan">Skydropx (FedEx / DHL)</span> | Descargas digitales STL verificadas
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-purple-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#" onclick="filterCatalog('todos'); return false;" class="flex items-center gap-3 group shrink-0">
+                <div id="header-logo-inner" class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-purple-950 to-cyan-950 border border-neonPurple/60 flex items-center justify-center neon-glow-purple group-hover:scale-105 transition">
+                        <svg class="w-7 h-7 text-neonCyan" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="24" r="6" stroke="currentColor" stroke-width="3"/>
+                            <ellipse cx="32" cy="39" rx="9" ry="11" stroke="#a855f7" stroke-width="3"/>
+                            <path d="M26 22L14 12L8 20M38 22L50 12L56 20M24 28L10 26L6 36M40 28L54 26L58 36M24 36L10 42L8 52M40 36L54 42L56 52M26 44L16 54M38 44L48 54" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-heading font-black text-lg sm:text-xl tracking-wider text-white block leading-none">
+                            VIO TECNO <span class="px-1.5 py-0.5 text-[10px] rounded bg-neonPurple/30 border border-neonPurple text-purple-200 align-middle">STORE</span>
+                        </span>
+                        <span class="text-[10px] tracking-widest text-neonCyan uppercase font-semibold">Cosplay & 3D Props Studio</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold text-gray-300">
+                <button type="button" onclick="filterCatalog('todos')" class="hover:text-neonCyan transition">Todo</button>
+                <button type="button" onclick="filterCatalog('stl')" class="hover:text-neonCyan transition">Archivos 3D (STL)</button>
+                <button type="button" onclick="filterCatalog('faceshell')" class="hover:text-neonCyan transition">M谩scaras / Faceshells</button>
+                <button type="button" onclick="filterCatalog('traje')" class="hover:text-neonCyan transition">Trajes y Telas</button>
+                <button type="button" onclick="openSizeGuideModal('suits')" class="px-3 py-1.5 rounded-xl border border-neonCyan/40 text-neonCyan hover:bg-cyan-950/50 transition">馃搹 Gu铆a de Tallas</button>
+                <a href="#faq-section" class="hover:text-neonCyan transition">FAQ</a>
+            </nav>
+
+            <!-- Right Controls -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Theme Switcher (Dark / Light White Mode) -->
+                <button type="button" id="theme-toggle-btn" onclick="toggleSiteTheme()" title="Cambiar entre Vista Oscura y Fondo Blanco" class="p-2.5 rounded-xl bg-darkInput border border-gray-800 hover:border-neonCyan text-gray-200 hover:text-neonCyan transition flex items-center gap-1.5 text-xs font-bold">
+                    <span id="theme-toggle-icon">鈽€锔�</span>
+                    <span id="theme-toggle-label" class="hidden xl:inline">Fondo Blanco</span>
+                </button>
+
+                <!-- Currency Switcher -->
+                <div class="flex items-center bg-darkInput rounded-xl p-1 border border-gray-800 text-[11px] font-bold">
+                    <button type="button" id="btn-curr-mxn" onclick="setCurrency('MXN')" class="px-2.5 py-1 rounded-lg bg-neonPurple text-white transition">MXN ($)</button>
+                    <button type="button" id="btn-curr-usd" onclick="setCurrency('USD')" class="px-2.5 py-1 rounded-lg text-gray-400 hover:text-white transition">USD ($)</button>
+                </div>
+
+                <!-- Unified User / Admin Account Button -->
+                <button type="button" onclick="handleUserIconClick()" id="header-user-btn" title="Cuenta de Cliente / Acceso" class="relative p-2.5 rounded-xl bg-darkInput border border-gray-800 hover:border-neonCyan text-gray-200 hover:text-neonCyan transition flex items-center gap-1.5">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    <span id="header-user-label" class="hidden md:inline text-xs font-semibold">Entrar</span>
+                </button>
+
+                <!-- Cart Button -->
+                <button type="button" onclick="toggleCartDrawer()" class="relative p-2.5 rounded-xl bg-darkInput border border-purple-500/40 hover:border-neonPurple text-white transition neon-glow-purple">
+                    <svg class="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                    </svg>
+                    <span id="cart-badge" class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-neonCyan text-darkBg font-extrabold text-[11px] flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-14 sm:py-20 px-4 overflow-hidden border-b border-purple-900/30">
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-950/25 via-transparent to-darkBg pointer-events-none"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10 space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-950/70 border border-purple-500/40 text-xs font-semibold text-purple-200">
+                <span class="w-2 h-2 rounded-full bg-neonPurple"></span>
+                Tienda Oficial VIO TECNO 2000 鈥� Cosplay & Impresi贸n 3D
+            </div>
+
+            <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                Cosplay Profesional, Faceshells <br class="hidden sm:inline">
+                <span class="hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-neonPurple via-purple-400 to-neonCyan">& Archivos 3D STL</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-sm sm:text-base text-gray-300 leading-relaxed">
+                Adquiere tus archivos digitales <strong class="text-white">3D STL</strong> o encarga m谩scaras, telas y trajes personalizados con env铆os nacionales v铆a <strong class="text-neonCyan">Skydropx (FedEx y DHL)</strong>.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+                <a href="#catalog-section" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-neonPurple to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-purple-900/40 transition flex items-center gap-2">
+                    馃泹锔� Explorar Cat谩logo Directo
+                </a>
+                <button type="button" onclick="openSizeGuideModal('suits')" class="px-7 py-3.5 rounded-2xl bg-darkCard hover:bg-darkInput border border-neonCyan/50 text-neonCyan font-bold text-sm transition flex items-center gap-2">
+                    馃搹 Consultar Gu铆a de Tallas
+                </button>
+            </div>
+
+            <!-- Trust Feature Pills -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-8 text-left">
+                <div class="glass-panel p-3.5 rounded-2xl flex items-center gap-3">
+                    <span class="text-xl">鈿�</span>
+                    <div>
+                        <p class="text-xs font-bold text-white">Archivos 3D STL</p>
+                        <p class="text-[11px] text-gray-400">Entrega digital privada</p>
+                    </div>
+                </div>
+                <div class="glass-panel p-3.5 rounded-2xl flex items-center gap-3">
+                    <span class="text-xl">馃殮</span>
+                    <div>
+                        <p class="text-xs font-bold text-white">Gu铆as Skydropx</p>
+                        <p class="text-[11px] text-gray-400">FedEx Express y DHL</p>
+                    </div>
+                </div>
+                <div class="glass-panel p-3.5 rounded-2xl flex items-center gap-3">
+                    <span class="text-xl">馃挸</span>
+                    <div>
+                        <p class="text-xs font-bold text-white">Pago con PayPal</p>
+                        <p class="text-[11px] text-gray-400">Compra protegida</p>
+                    </div>
+                </div>
+                <div class="glass-panel p-3.5 rounded-2xl flex items-center gap-3">
+                    <span class="text-xl">馃搻</span>
+                    <div>
+                        <p class="text-xs font-bold text-white">Tallas Exactas</p>
+                        <p class="text-[11px] text-gray-400">Gu铆a de medidas integrada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Product Catalog -->
+    <main id="catalog-section" class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-14 space-y-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3">
+                    Cat谩logo de Productos
+                    <span id="active-category-badge" class="text-xs font-sans font-bold px-3 py-1 rounded-full bg-purple-950 border border-neonPurple/50 text-purple-200">Todos</span>
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">Selecciona talla o metraje seg煤n el art铆culo y agr茅galo a tu carrito.</p>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap gap-2">
+                <button type="button" onclick="filterCatalog('todos')" data-cat="todos" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-neonPurple text-white transition">Todos</button>
+                <button type="button" onclick="filterCatalog('stl')" data-cat="stl" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-darkCard border border-gray-800 text-gray-300 hover:border-neonCyan transition">Archivos 3D (STL)</button>
+                <button type="button" onclick="filterCatalog('faceshell')" data-cat="faceshell" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-darkCard border border-gray-800 text-gray-300 hover:border-neonCyan transition">M谩scaras / Faceshells</button>
+                <button type="button" onclick="filterCatalog('traje')" data-cat="traje" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-darkCard border border-gray-800 text-gray-300 hover:border-neonCyan transition">Trajes</button>
+                <button type="button" onclick="filterCatalog('tela')" data-cat="tela" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-darkCard border border-gray-800 text-gray-300 hover:border-neonCyan transition">Telas</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </main>
+
+    <!-- Instagram Portfolio Showcase -->
+    <section class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 border-t border-purple-900/30">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-neonCyan">Portafolio & Comunidad</span>
+                <h2 class="font-heading text-2xl font-extrabold text-white mt-1">Trabajos Recientes en Instagram</h2>
+            </div>
+            <a href="https://www.instagram.com/viotecno2000/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-bold text-xs transition self-start">
+                馃摳 Seguir @viotecno2000
+            </a>
+        </div>
+        <div id="instagram-posts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq-section" class="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-14 border-t border-purple-900/30">
+        <div class="text-center mb-8">
+            <span class="text-xs font-bold uppercase tracking-widest text-neonPurple">Centro de Ayuda</span>
+            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white mt-1">Preguntas Frecuentes</h2>
+        </div>
+        <div id="faq-list-container" class="space-y-3"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-purple-900/40 bg-darkCard/90 py-10 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div id="footer-logo-container" class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-purple-950 border border-neonPurple/50 flex items-center justify-center text-neonCyan font-heading font-black">V</div>
+                <div>
+                    <p class="font-heading font-bold text-sm text-white">VIO TECNO STORE</p>
+                    <p class="text-[11px] text-gray-400">Cosplay Studio, Faceshells & Impresi贸n 3D</p>
+                </div>
+            </div>
+            <p class="text-xs text-gray-400 text-center">
+                漏 2026 VIO TECNO 2000. Todos los derechos reservados. Env铆os gestionados v铆a Skydropx.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== MODALS & DRAWERS ==================== -->
+
+    <!-- 1. Shopping Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/75 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-darkCard border-l border-purple-500/40 flex flex-col shadow-2xl">
+            <div class="p-5 border-b border-gray-800 flex items-center justify-between">
+                <h3 class="font-heading font-bold text-lg text-white">馃洅 Tu Carrito</h3>
+                <button type="button" onclick="toggleCartDrawer()" class="p-2 rounded-lg bg-darkInput text-gray-400 hover:text-white">鉁�</button>
+            </div>
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
+            <div class="p-5 border-t border-gray-800 bg-darkBg/90 space-y-4">
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-400">Subtotal Productos:</span>
+                    <span id="cart-subtotal-label" class="font-heading font-extrabold text-lg text-neonCyan">$0 MXN</span>
+                </div>
+                <button type="button" onclick="openCheckoutModal()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-neonPurple to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm transition shadow-lg">
+                    Continuar al Pago y Env铆o 鈫�
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Checkout & Skydropx Shipping Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+            <div onclick="closeCheckoutModal()" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+            <div class="relative bg-darkCard border border-purple-500/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl space-y-6">
+                <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+                    <div>
+                        <h3 class="font-heading font-extrabold text-xl text-white">Finalizar Pedido</h3>
+                        <p class="text-xs text-gray-400">Completa tus datos para env铆o Skydropx y pago v铆a PayPal</p>
+                    </div>
+                    <button type="button" onclick="closeCheckoutModal()" class="p-2 rounded-xl bg-darkInput text-gray-400 hover:text-white">鉁�</button>
+                </div>
+
+                <form id="checkout-form" onsubmit="processPayPalOrder(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Nombre Completo *</label>
+                            <input type="text" id="chk-name" required placeholder="Ej: Peter Parker" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Correo Electr贸nico *</label>
+                            <input type="email" id="chk-email" required placeholder="correo@ejemplo.com" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-semibold text-gray-300 mb-1">Tel茅fono / WhatsApp (10 d铆gitos) *</label>
+                        <input type="tel" id="chk-phone" required placeholder="33 1234 5678" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                    </div>
+
+                    <div id="physical-shipping-fields" class="space-y-3 pt-2 border-t border-gray-800">
+                        <p class="text-xs font-bold text-neonCyan">馃搷 Direcci贸n de Entrega Skydropx</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-300 mb-1">Calle y N煤mero *</label>
+                                <input type="text" id="chk-street" required placeholder="Av. Principal #123" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-300 mb-1">Colonia *</label>
+                                <input type="text" id="chk-colony" required placeholder="Centro" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-300 mb-1">C贸digo Postal *</label>
+                                <input type="text" id="chk-zip" required placeholder="44100" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-300 mb-1">Municipio / Ciudad *</label>
+                                <input type="text" id="chk-city" required placeholder="Guadalajara" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-300 mb-1">Estado *</label>
+                                <input type="text" id="chk-state" required placeholder="Jalisco" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Referencias del Domicilio</label>
+                            <input type="text" id="chk-refs" placeholder="Casa color blanco, frente a parque..." class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+
+                        <div class="space-y-2 pt-2">
+                            <span class="block text-xs font-bold text-white">馃殮 Selecciona Paqueter铆a:</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <label class="flex items-center justify-between p-3 rounded-xl bg-darkInput border border-purple-500/40 cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <input type="radio" name="carrier" value="FedEx" checked onchange="recalculateCheckoutTotal()" class="accent-neonPurple">
+                                        <span class="text-xs font-bold text-white">FedEx Express</span>
+                                    </div>
+                                    <span id="label-fedex-cost" class="text-xs font-bold text-neonCyan">$160 MXN</span>
+                                </label>
+                                <label class="flex items-center justify-between p-3 rounded-xl bg-darkInput border border-gray-700 cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <input type="radio" name="carrier" value="DHL" onchange="recalculateCheckoutTotal()" class="accent-neonPurple">
+                                        <span class="text-xs font-bold text-white">DHL Express</span>
+                                    </div>
+                                    <span id="label-dhl-cost" class="text-xs font-bold text-neonCyan">$210 MXN</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 space-y-1.5 text-xs">
+                        <p class="font-bold text-indigo-200">馃挸 Datos de Pago PayPal:</p>
+                        <p class="text-gray-300">Cuenta oficial: <strong id="chk-paypal-account-display" class="text-neonCyan font-mono">vio2015@outlook.com</strong></p>
+                        <p id="chk-paypal-notes-display" class="text-[11px] text-gray-400"></p>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-800">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Total a Pagar:</span>
+                            <span id="chk-final-total" class="font-heading font-black text-2xl text-neonCyan">$0 MXN</span>
+                        </div>
+                        <button type="submit" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-neonPurple to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm shadow-lg transition">
+                            Confirmar Pedido y Pagar 鈫�
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Order Success & PayPal Redirect Modal -->
+    <div id="order-success-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+            <div onclick="closeOrderSuccessModal()" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+            <div class="relative bg-darkCard border border-emerald-500/40 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl text-center space-y-5">
+                <div class="w-16 h-16 rounded-full bg-emerald-950 border border-emerald-500/50 flex items-center justify-center mx-auto text-3xl">鉁�</div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Orden Registrada</span>
+                    <h3 class="font-heading font-black text-2xl text-white mt-1">Folio: <span id="succ-order-id" class="text-neonCyan">VT-000000</span></h3>
+                </div>
+                <div class="p-4 rounded-2xl bg-darkInput border border-gray-800 space-y-2 text-xs text-left">
+                    <p class="flex justify-between"><span class="text-gray-400">Total a depositar:</span> <strong id="succ-order-total" class="text-white">$0 MXN</strong></p>
+                    <p class="flex justify-between"><span class="text-gray-400">Cuenta PayPal:</span> <strong id="succ-paypal-acc" class="text-neonCyan font-mono">vio2015@outlook.com</strong></p>
+                    <p id="succ-paypal-instructions" class="text-[11px] text-gray-400 pt-2 border-t border-gray-800"></p>
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <a id="succ-paypal-btn" href="https://www.paypal.com" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-2xl bg-[#0070ba] hover:bg-[#005ea6] text-white font-bold text-sm transition shadow-lg">
+                        馃挸 Ir a Pagar en PayPal
+                    </a>
+                    <button type="button" onclick="closeOrderSuccessModal()" class="w-full py-2.5 rounded-xl bg-darkInput text-gray-300 hover:text-white text-xs font-semibold">
+                        Volver a la Tienda
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Unified Customer & Admin Auth Modal -->
+    <div id="user-auth-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+            <div onclick="closeUserAuthModal()" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+            <div class="relative bg-darkCard border border-purple-500/40 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl space-y-5">
+                <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                    <h3 class="font-heading font-extrabold text-lg text-white">Cuenta VIO TECNO</h3>
+                    <button type="button" onclick="closeUserAuthModal()" class="p-2 rounded-xl bg-darkInput text-gray-400 hover:text-white">鉁�</button>
+                </div>
+
+                <!-- Guest Panel -->
+                <div id="cust-guest-panel" class="space-y-4">
+                    <div class="grid grid-cols-2 bg-darkInput p-1 rounded-xl text-xs font-bold">
+                        <button type="button" id="tab-btn-login" onclick="switchAuthTab('login')" class="py-2 rounded-lg bg-neonPurple text-white transition">Iniciar Sesi贸n</button>
+                        <button type="button" id="tab-btn-register" onclick="switchAuthTab('register')" class="py-2 rounded-lg text-gray-400 hover:text-white transition">Crear Cuenta</button>
+                    </div>
+
+                    <form id="unified-login-form" onsubmit="handleUnifiedLogin(event)" class="space-y-3">
+                        <div id="login-error-banner" class="hidden p-3 rounded-xl bg-red-950/60 border border-red-500/50 text-xs text-red-200 space-y-1.5">
+                            <p id="login-error-text" class="font-semibold"></p>
+                            <button type="button" id="login-go-register-btn" onclick="goToRegisterWithEmail()" class="hidden text-[11px] font-bold text-neonCyan hover:underline">
+                                鈫� Crear cuenta con este correo ahora
+                            </button>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Correo Electr贸nico *</label>
+                            <input type="email" id="login-email" oninput="clearLoginError()" required placeholder="tu@correo.com" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Contrase帽a *</label>
+                            <input type="password" id="login-pass" oninput="clearLoginError()" required placeholder="鈥⑩€⑩€⑩€⑩€⑩€⑩€⑩€�" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2.5 text-xs text-white">
+                        </div>
+                        <button type="submit" class="w-full py-3 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs transition">
+                            Entrar a mi Cuenta
+                        </button>
+                    </form>
+
+                    <form id="customer-register-form" onsubmit="handleCustomerRegister(event)" class="space-y-3 hidden">
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Nombre Completo *</label>
+                            <input type="text" id="reg-name" required placeholder="Tu nombre" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Correo Electr贸nico *</label>
+                            <input type="email" id="reg-email" required placeholder="tu@correo.com" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Tel茅fono / WhatsApp *</label>
+                            <input type="tel" id="reg-phone" required placeholder="33 1234 5678" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Crear Contrase帽a (m铆n. 6 caracteres) *</label>
+                            <input type="password" id="reg-pass" required minlength="6" placeholder="鈥⑩€⑩€⑩€⑩€⑩€⑩€⑩€�" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <button type="submit" class="w-full py-3 rounded-xl bg-neonCyan text-darkBg font-extrabold text-xs hover:opacity-90 transition">
+                            Registrarme y Verificar Correo
+                        </button>
+                    </form>
+
+                    <form id="verify-email-form" onsubmit="handleVerifyCustomerEmail(event)" class="space-y-3 hidden">
+                        <div class="p-3 rounded-xl bg-cyan-950/40 border border-neonCyan/40 text-xs text-cyan-200">
+                            Ingresa el c贸digo de 6 d铆gitos enviado a tu correo.
+                            <span id="demo-code-hint" class="block font-mono font-bold text-amber-300 mt-1"></span>
+                        </div>
+                        <input type="text" id="verify-code-input" required maxlength="6" placeholder="000000" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2.5 text-center font-mono text-base tracking-widest text-white">
+                        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs">
+                            鉁� Confirmar C贸digo
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Logged-in Customer Dashboard -->
+                <div id="cust-logged-panel" class="space-y-4 hidden">
+                    <div class="p-4 rounded-2xl bg-darkInput border border-purple-500/30 flex items-center justify-between">
+                        <div>
+                            <p id="cust-profile-name" class="font-bold text-sm text-white">Cliente</p>
+                            <p id="cust-profile-email" class="text-[11px] text-gray-400">correo@ejemplo.com</p>
+                        </div>
+                        <button type="button" onclick="customerLogout()" class="px-3 py-1.5 rounded-lg bg-red-950/60 text-red-300 text-xs font-semibold hover:bg-red-900/60">
+                            Cerrar Sesi贸n
+                        </button>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="font-heading font-bold text-xs text-neonCyan uppercase">馃摜 Mis Descargas 3D (STL)</h4>
+                        <div id="cust-downloads-list" class="space-y-2 max-h-40 overflow-y-auto"></div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-heading font-bold text-xs text-purple-300 uppercase">馃摝 Seguimiento Detallado de Pedidos</h4>
+                            <span class="text-[10px] text-gray-400">Toca un pedido para ver el proceso</span>
+                        </div>
+                        <div id="cust-orders-list" class="space-y-2.5 max-h-64 overflow-y-auto pr-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4B. Detailed Order Tracking & Process Modal -->
+    <div id="customer-order-detail-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+            <div onclick="closeCustomerOrderDetailModal()" class="fixed inset-0 bg-black/85 backdrop-blur-sm"></div>
+            <div class="relative bg-darkCard border border-neonCyan/40 rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl space-y-5">
+                <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-neonCyan">Seguimiento de Orden</span>
+                        <h3 id="cod-order-id" class="font-heading font-black text-xl text-white">VT-000000</h3>
+                    </div>
+                    <button type="button" onclick="closeCustomerOrderDetailModal()" class="p-2 rounded-xl bg-darkInput text-gray-400 hover:text-white">鉁�</button>
+                </div>
+
+                <!-- Step-by-Step Visual Progress Tracker -->
+                <div id="cod-progress-container" class="p-4 rounded-2xl bg-darkInput border border-purple-500/30 space-y-3"></div>
+
+                <!-- Tracking & Carrier Box -->
+                <div id="cod-shipping-box" class="p-4 rounded-2xl bg-darkInput border border-gray-800 space-y-2 text-xs"></div>
+
+                <!-- Items Breakdown -->
+                <div class="space-y-2">
+                    <h4 class="font-heading font-bold text-xs text-purple-300 uppercase">馃泹锔� Art铆culos en este Pedido</h4>
+                    <div id="cod-items-list" class="space-y-2 max-h-44 overflow-y-auto"></div>
+                </div>
+
+                <!-- Pending Payment Action (Only shown if Pago Pendiente) -->
+                <div id="cod-pending-pay-box" class="hidden p-4 rounded-2xl bg-amber-950/30 border border-amber-500/40 space-y-2 text-xs">
+                    <p class="font-bold text-amber-300">鈴� Tu orden espera acreditaci贸n de pago en PayPal</p>
+                    <p class="text-[11px] text-gray-300">Cuenta oficial: <strong id="cod-paypal-acc" class="text-neonCyan font-mono"></strong> 鈥� Incluye el folio <strong id="cod-paypal-folio" class="text-white"></strong> en la nota.</p>
+                    <a id="cod-paypal-link" href="https://www.paypal.com" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-xl bg-[#0070ba] hover:bg-[#005ea6] text-white font-bold text-xs transition">
+                        馃挸 Completar Pago en PayPal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Size Guide Modal -->
+    <div id="size-guide-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+            <div onclick="closeSizeGuideModal()" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+            <div class="relative bg-darkCard border border-neonCyan/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl space-y-5">
+                <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                    <h3 class="font-heading font-extrabold text-lg text-white">馃搹 Gu铆a Oficial de Medidas</h3>
+                    <button type="button" onclick="closeSizeGuideModal()" class="p-2 rounded-xl bg-darkInput text-gray-400 hover:text-white">鉁�</button>
+                </div>
+
+                <div class="grid grid-cols-2 bg-darkInput p-1 rounded-xl text-xs font-bold">
+                    <button type="button" id="sg-tab-suits" onclick="switchSizeGuideTab('suits')" class="py-2 rounded-lg bg-neonPurple text-white transition">馃暦锔� Trajes Cosplay</button>
+                    <button type="button" id="sg-tab-heads" onclick="switchSizeGuideTab('heads')" class="py-2 rounded-lg text-gray-400 hover:text-white transition">馃幁 Faceshells / M谩scaras</button>
+                </div>
+
+                <div id="sg-content-suits" class="space-y-4">
+                    <div id="sg-img-suits-container" class="hidden">
+                        <img id="sg-img-suits" src="" alt="Gu铆a de Tallas Trajes" class="w-full max-h-56 object-contain rounded-2xl border border-gray-800 bg-darkBg">
+                    </div>
+                    <div class="overflow-x-auto rounded-2xl border border-gray-800">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-darkInput text-gray-300 uppercase text-[10px]">
+                                <tr>
+                                    <th class="px-4 py-3">Talla</th>
+                                    <th class="px-4 py-3">Estatura</th>
+                                    <th class="px-4 py-3">Pecho</th>
+                                    <th class="px-4 py-3">Cintura</th>
+                                    <th class="px-4 py-3">Cadera</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sg-tbody-suits" class="divide-y divide-gray-800 text-gray-200"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="sg-content-heads" class="space-y-4 hidden">
+                    <div id="sg-img-heads-container" class="hidden">
+                        <img id="sg-img-heads" src="" alt="Gu铆a de Tallas Faceshells" class="w-full max-h-56 object-contain rounded-2xl border border-gray-800 bg-darkBg">
+                    </div>
+                    <div class="overflow-x-auto rounded-2xl border border-gray-800">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-darkInput text-gray-300 uppercase text-[10px]">
+                                <tr>
+                                    <th class="px-4 py-3">Talla</th>
+                                    <th class="px-4 py-3">Circunferencia Craneal</th>
+                                    <th class="px-4 py-3">Altura Rostro</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sg-tbody-heads" class="divide-y divide-gray-800 text-gray-200"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Admin Control Panel Modal -->
+    <div id="admin-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="min-h-screen px-4 py-6 flex items-start justify-center">
+            <div onclick="closeAdminModal()" class="fixed inset-0 bg-black/85 backdrop-blur-sm"></div>
+            <div class="relative bg-darkBg border border-neonPurple/50 rounded-3xl max-w-6xl w-full p-5 sm:p-7 shadow-2xl space-y-5">
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-gray-800 pb-4">
+                    <div>
+                        <h3 class="font-heading font-black text-xl text-white">鈿欙笍 Panel de Control 鈥� VIO TECNO STORE</h3>
+                        <p class="text-xs text-gray-400">Gesti贸n de cat谩logo, env铆os Skydropx, descargas STL y configuraci贸n</p>
+                    </div>
+                    <button type="button" onclick="closeAdminModal()" class="px-3.5 py-2 rounded-xl bg-darkCard border border-gray-700 text-gray-300 hover:text-white text-xs font-bold">鉁� Cerrar Panel</button>
+                </div>
+
+                <!-- Admin Navigation Tabs -->
+                <div class="flex flex-wrap gap-2 text-xs font-bold">
+                    <button type="button" id="adm-tab-btn-products" onclick="switchAdminTab('products')" class="adm-tab-btn px-3.5 py-2 rounded-xl bg-neonPurple text-white">馃摝 Cat谩logo</button>
+                    <button type="button" id="adm-tab-btn-orders" onclick="switchAdminTab('orders')" class="adm-tab-btn px-3.5 py-2 rounded-xl bg-darkCard text-gray-300 hover:text-white">馃殮 Pedidos Skydropx (<span id="adm-orders-count">0</span>)</button>
+                    <button type="button" id="adm-tab-btn-users" onclick="switchAdminTab('users')" class="adm-tab-btn px-3.5 py-2 rounded-xl bg-darkCard text-gray-300 hover:text-white">馃懃 Clientes (<span id="adm-users-count">0</span>)</button>
+                    <button type="button" id="adm-tab-btn-images" onclick="switchAdminTab('images')" class="adm-tab-btn px-3.5 py-2 rounded-xl bg-darkCard text-gray-300 hover:text-white">馃柤锔� Logo y Gu铆as de Tallas</button>
+                    <button type="button" id="adm-tab-btn-ig" onclick="switchAdminTab('ig')" class="adm-tab-btn px-3.5 py-2 rounded-xl bg-darkCard text-gray-300 hover:text-white">馃摳 Instagram</button>
+                    <button type="button" id="adm-tab-btn-faq" onclick="switchAdminTab('faq')" class="adm-tab-btn px-3.5 py-2 rounded-xl bg-darkCard text-gray-300 hover:text-white">鉂� Preguntas Frecuentes</button>
+                    <button type="button" id="adm-tab-btn-comms" onclick="switchAdminTab('comms')" class="adm-tab-btn px-3.5 py-2 rounded-xl bg-darkCard text-gray-300 hover:text-white">馃挸 PayPal, Env铆os y Correos</button>
+                    <button type="button" id="adm-tab-btn-security" onclick="switchAdminTab('security')" class="adm-tab-btn px-3.5 py-2 rounded-xl bg-darkCard text-gray-300 hover:text-white">馃攼 Contrase帽a</button>
+                </div>
+
+                <!-- TAB 1: CATALOG MANAGER -->
+                <div id="adm-tab-content-products" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <form id="admin-product-form" onsubmit="saveAdminProduct(event)" class="bg-darkCard p-5 rounded-2xl border border-purple-500/30 space-y-3 h-fit">
+                        <h4 id="adm-form-title" class="font-heading font-bold text-white text-sm">鉃� Agregar Nuevo Producto</h4>
+                        <input type="hidden" id="adm-prod-id">
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Nombre del Art铆culo *</label>
+                            <input type="text" id="adm-prod-name" required placeholder="Ej: Faceshell Raimi V3" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Categor铆a / Tipo *</label>
+                            <select id="adm-prod-type" onchange="toggleAdminProductTypeFields()" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                                <option value="faceshell">馃幁 M谩scara / Faceshell</option>
+                                <option value="stl">馃 Archivo Digital 3D (STL)</option>
+                                <option value="traje">馃暦锔� Traje Cosplay</option>
+                                <option value="tela">馃У Tela Especializada (Por Metro)</option>
+                            </select>
+                        </div>
+
+                        <div id="adm-sizes-wrapper">
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">馃搹 Tallas Disponibles (separadas por coma)</label>
+                            <input type="text" id="adm-prod-sizes" value="CH, M, G" placeholder="Ej: Infantil, XCH, CH, M, G, XG" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+
+                        <div id="adm-stl-link-wrapper" class="hidden p-3 rounded-xl bg-cyan-950/30 border border-neonCyan/40 space-y-1">
+                            <label class="block text-[11px] font-bold text-neonCyan">馃敆 Enlace Privado de Descarga 3D (Drive / MEGA / Dropbox)</label>
+                            <input type="url" id="adm-prod-stl-url" placeholder="https://drive.google.com/..." class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            <p class="text-[10px] text-gray-400">Solo se muestra al cliente cuando confirmas su pago.</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-300 mb-1">Precio MXN *</label>
+                                <input type="number" id="adm-prod-mxn" required min="1" placeholder="1450" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-300 mb-1">Precio USD *</label>
+                                <input type="number" id="adm-prod-usd" required min="1" placeholder="78" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Fotograf铆as del Art铆culo (M煤ltiples 谩ngulos)</label>
+                            <textarea id="adm-prod-imgs" rows="3" oninput="renderAdminImgPreviews()" placeholder="Pega una URL por l铆nea para a帽adir varias fotos (o sube archivos abajo)..." class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white mb-1.5 font-mono"></textarea>
+                            <div class="flex items-center justify-between gap-2">
+                                <input type="file" accept="image/*" multiple onchange="handleMultiImageUpload(event, 'adm-prod-imgs')" class="text-[11px] text-gray-400">
+                                <button type="button" onclick="document.getElementById('adm-prod-imgs').value=''; renderAdminImgPreviews();" class="text-[10px] text-red-400 hover:underline shrink-0">Limpiar fotos</button>
+                            </div>
+                            <div id="adm-prod-imgs-preview" class="flex flex-wrap gap-2 mt-2"></div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Etiqueta Destacada</label>
+                            <input type="text" id="adm-prod-badge" placeholder="Ej: Nuevo, STL Listo, Bajo Pedido" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+
+                        <label class="flex items-center gap-2.5 p-3 rounded-xl bg-red-950/30 border border-red-500/30 cursor-pointer">
+                            <input type="checkbox" id="adm-prod-out-of-stock" class="w-4 h-4 accent-red-500 rounded">
+                            <div>
+                                <span class="block text-xs font-bold text-red-200">馃毇 Marcar art铆culo como Agotado</span>
+                                <span class="block text-[10px] text-gray-400">Permanece visible en cat谩logo pero bloquea compras y carrito.</span>
+                            </div>
+                        </label>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Descripci贸n *</label>
+                            <textarea id="adm-prod-desc" required rows="2" placeholder="Detalles t茅cnicos del producto..." class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white"></textarea>
+                        </div>
+
+                        <div class="flex gap-2 pt-1">
+                            <button type="submit" class="flex-1 py-2.5 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs transition">馃捑 Guardar Art铆culo</button>
+                            <button type="button" onclick="resetAdminProductForm()" class="px-3 py-2.5 rounded-xl bg-gray-800 text-gray-300 text-xs">Limpiar</button>
+                        </div>
+                    </form>
+
+                    <div class="lg:col-span-2 space-y-3">
+                        <h4 class="font-heading font-bold text-white text-sm">Art铆culos Activos en Tienda</h4>
+                        <div id="adm-products-list" class="space-y-2.5 max-h-[540px] overflow-y-auto pr-1"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: SKYDROPX ORDERS & TRACKING NOTIFICATIONS -->
+                <div id="adm-tab-content-orders" class="space-y-4 hidden">
+                    <div class="flex flex-wrap items-center justify-between gap-3 bg-darkCard p-4 rounded-2xl border border-cyan-500/30">
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-sm">Bandeja de Pedidos & Exportaci贸n Masiva Skydropx</h4>
+                            <p class="text-xs text-gray-400">Descarga los env铆os f铆sicos en CSV o actualiza el estatus para notificar por correo al cliente.</p>
+                        </div>
+                        <button type="button" onclick="exportSkydropxCSV()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition flex items-center gap-2">
+                            馃摜 Exportar CSV para Skydropx
+                        </button>
+                    </div>
+                    <div id="adm-orders-list" class="space-y-3 max-h-[500px] overflow-y-auto"></div>
+                </div>
+
+                <!-- TAB 3: REGISTERED USERS DIRECTORY -->
+                <div id="adm-tab-content-users" class="space-y-4 hidden">
+                    <div class="flex flex-wrap items-center justify-between gap-3 bg-darkCard p-4 rounded-2xl border border-purple-500/30">
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-sm">Directorio de Clientes Registrados</h4>
+                            <p class="text-xs text-gray-400">Consulta correos verificados, tel茅fonos e historial de compras.</p>
+                        </div>
+                        <button type="button" onclick="copyUsersContactList()" class="px-4 py-2 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs transition">
+                            馃搵 Copiar Lista de Correos y Tel茅fonos
+                        </button>
+                    </div>
+                    <div id="adm-users-list" class="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[500px] overflow-y-auto"></div>
+                </div>
+
+                <!-- TAB 4: BRAND LOGO & SIZE GUIDES -->
+                <div id="adm-tab-content-images" class="space-y-6 hidden">
+                    <form onsubmit="saveBrandSettings(event)" class="bg-darkCard p-5 rounded-2xl border border-purple-500/30 space-y-4 max-w-2xl">
+                        <h4 class="font-heading font-bold text-white text-base">Personalizar Logotipo e Im谩genes de Tallas</h4>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">URL o Archivo del Logotipo Oficial (Dejar vac铆o para usar logo SVG ne贸n)</label>
+                            <input type="text" id="set-logo-url" placeholder="https://..." class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white mb-1.5">
+                            <input type="file" accept="image/*" onchange="handleFileUploadToInput(event, 'set-logo-url')" class="text-[11px] text-gray-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Imagen Gu铆a de Tallas 鈥� Trajes y Muscle Suits</label>
+                            <input type="text" id="set-guide-suits" placeholder="https://..." class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white mb-1.5">
+                            <input type="file" accept="image/*" onchange="handleFileUploadToInput(event, 'set-guide-suits')" class="text-[11px] text-gray-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Imagen Gu铆a de Tallas 鈥� Faceshells y M谩scaras</label>
+                            <input type="text" id="set-guide-heads" placeholder="https://..." class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white mb-1.5">
+                            <input type="file" accept="image/*" onchange="handleFileUploadToInput(event, 'set-guide-heads')" class="text-[11px] text-gray-400">
+                        </div>
+                        <button type="submit" class="px-6 py-3 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs transition">
+                            馃捑 Guardar Configuraci贸n Visual
+                        </button>
+                    </form>
+
+                    <!-- Dynamic Size Guide Rows Manager -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-darkCard p-5 rounded-2xl border border-purple-500/30 space-y-3">
+                            <h4 class="font-heading font-bold text-white text-sm">馃暦锔� Filas de Medidas: Trajes (Infantil, XCH, CH, M, G, XG...)</h4>
+                            <form onsubmit="addSizeGuideRow(event, 'suits')" class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                                <input type="text" id="new-suit-size" required placeholder="Talla (ej. XG)" class="bg-darkInput border border-gray-700 rounded-lg px-2.5 py-2 text-white">
+                                <input type="text" id="new-suit-height" required placeholder="Estatura" class="bg-darkInput border border-gray-700 rounded-lg px-2.5 py-2 text-white">
+                                <input type="text" id="new-suit-chest" required placeholder="Pecho cm" class="bg-darkInput border border-gray-700 rounded-lg px-2.5 py-2 text-white">
+                                <input type="text" id="new-suit-waist" required placeholder="Cintura cm" class="bg-darkInput border border-gray-700 rounded-lg px-2.5 py-2 text-white">
+                                <input type="text" id="new-suit-hip" required placeholder="Cadera cm" class="bg-darkInput border border-gray-700 rounded-lg px-2.5 py-2 text-white">
+                                <button type="submit" class="col-span-2 sm:col-span-5 py-2 rounded-lg bg-neonPurple text-white font-bold hover:bg-purple-600 transition">+ A帽adir Talla a Tabla de Trajes</button>
+                            </form>
+                            <div id="adm-suits-sizes-list" class="space-y-1.5 pt-2"></div>
+                        </div>
+
+                        <div class="bg-darkCard p-5 rounded-2xl border border-cyan-500/30 space-y-3">
+                            <h4 class="font-heading font-bold text-white text-sm">馃幁 Filas de Medidas: Faceshells / M谩scaras</h4>
+                            <form onsubmit="addSizeGuideRow(event, 'heads')" class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                                <input type="text" id="new-head-size" required placeholder="Talla (ej. Infantil)" class="bg-darkInput border border-gray-700 rounded-lg px-2.5 py-2 text-white">
+                                <input type="text" id="new-head-circ" required placeholder="Circunf. (50-52 cm)" class="bg-darkInput border border-gray-700 rounded-lg px-2.5 py-2 text-white">
+                                <input type="text" id="new-head-height" required placeholder="Altura (18-19.5 cm)" class="bg-darkInput border border-gray-700 rounded-lg px-2.5 py-2 text-white">
+                                <button type="submit" class="sm:col-span-3 py-2 rounded-lg bg-cyan-700 text-white font-bold hover:bg-cyan-600 transition">+ A帽adir Talla a Tabla de Faceshells</button>
+                            </form>
+                            <div id="adm-heads-sizes-list" class="space-y-1.5 pt-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: INSTAGRAM GALLERY -->
+                <div id="adm-tab-content-ig" class="grid grid-cols-1 lg:grid-cols-3 gap-6 hidden">
+                    <form onsubmit="addAdminIgPost(event)" class="bg-darkCard p-5 rounded-2xl border border-purple-500/30 space-y-3 h-fit">
+                        <h4 class="font-heading font-bold text-white text-sm">馃摳 Publicar en Vitrina Instagram</h4>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">T铆tulo o Descripci贸n *</label>
+                            <input type="text" id="adm-ig-caption" required placeholder="Ej: Faceshell acabado espejo terminado" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Enlace Post Instagram</label>
+                            <input type="url" id="adm-ig-link" value="https://www.instagram.com/viotecno2000/" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Imagen (Opcional)</label>
+                            <input type="text" id="adm-ig-img" placeholder="Dejar vac铆o para icono ne贸n" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white mb-1">
+                            <input type="file" accept="image/*" onchange="handleFileUploadToInput(event, 'adm-ig-img')" class="text-[11px] text-gray-400">
+                        </div>
+                        <button type="submit" class="w-full py-2.5 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs">Publicar en Galer铆a</button>
+                    </form>
+                    <div id="adm-ig-list" class="lg:col-span-2 space-y-2.5"></div>
+                </div>
+
+                <!-- TAB 6: FAQ MANAGER -->
+                <div id="adm-tab-content-faq" class="grid grid-cols-1 lg:grid-cols-3 gap-6 hidden">
+                    <form onsubmit="saveAdminFaq(event)" class="bg-darkCard p-5 rounded-2xl border border-purple-500/30 space-y-3 h-fit">
+                        <h4 id="adm-faq-form-title" class="font-heading font-bold text-white text-sm">鉃� Nueva Pregunta Frecuente</h4>
+                        <input type="hidden" id="adm-faq-id">
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Pregunta *</label>
+                            <input type="text" id="adm-faq-question" required placeholder="Ej: 驴Cu谩nto tarda la fabricaci贸n?" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-300 mb-1">Respuesta *</label>
+                            <textarea id="adm-faq-answer" required rows="3" placeholder="Escribe la respuesta detallada..." class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white"></textarea>
+                        </div>
+                        <div class="flex gap-2">
+                            <button type="submit" class="flex-1 py-2.5 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs">馃捑 Guardar FAQ</button>
+                            <button type="button" onclick="resetAdminFaqForm()" class="px-3 py-2.5 rounded-xl bg-gray-800 text-gray-300 text-xs">Limpiar</button>
+                        </div>
+                    </form>
+                    <div id="adm-faq-list" class="lg:col-span-2 space-y-2.5"></div>
+                </div>
+
+                <!-- TAB 7: PAYPAL, SHIPPING RATES & EMAIL TEMPLATE -->
+                <div id="adm-tab-content-comms" class="hidden">
+                    <form onsubmit="saveCommsAndPaypalSettings(event)" class="bg-darkCard p-6 rounded-2xl border border-cyan-500/30 space-y-5 max-w-3xl">
+                        <div class="space-y-3">
+                            <h4 class="font-heading font-bold text-white text-sm">馃挸 Configuraci贸n de Cuenta PayPal</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Correo / Cuenta PayPal Oficial *</label>
+                                    <input type="text" id="set-paypal-account" required class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Enlace Directo PayPal.Me *</label>
+                                    <input type="url" id="set-paypal-link" required class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Instrucciones de Pago para el Cliente</label>
+                                <textarea id="set-paypal-notes" rows="2" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 pt-4 border-t border-gray-800">
+                            <h4 class="font-heading font-bold text-white text-sm">馃殮 Tarifas de Env铆o Skydropx (FedEx y DHL)</h4>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-300 mb-1">FedEx (MXN) *</label>
+                                    <input type="number" id="set-fedex-mxn" required min="0" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-300 mb-1">FedEx (USD) *</label>
+                                    <input type="number" id="set-fedex-usd" required min="0" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-300 mb-1">DHL (MXN) *</label>
+                                    <input type="number" id="set-dhl-mxn" required min="0" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-gray-300 mb-1">DHL (USD) *</label>
+                                    <input type="number" id="set-dhl-usd" required min="0" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 pt-4 border-t border-gray-800">
+                            <h4 class="font-heading font-bold text-white text-sm">鉁夛笍 Plantilla de Correo de Actualizaci贸n al Cliente</h4>
+                            <p class="text-[11px] text-gray-400">Etiquetas disponibles: <code class="text-neonCyan">{cliente}</code>, <code class="text-neonCyan">{pedido}</code>, <code class="text-neonCyan">{estatus}</code>, <code class="text-neonCyan">{paqueteria}</code>, <code class="text-neonCyan">{guia}</code>, <code class="text-neonCyan">{descargas}</code></p>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Asunto del Correo *</label>
+                                <input type="text" id="set-email-subject" required class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Cuerpo del Mensaje *</label>
+                                <textarea id="set-email-body" required rows="5" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white font-mono"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="px-6 py-3 rounded-xl bg-neonCyan text-darkBg font-extrabold text-xs hover:opacity-90 transition">
+                            馃捑 Guardar Configuraci贸n de PayPal, Env铆os y Correos
+                        </button>
+                    </form>
+                </div>
+
+                <!-- TAB 8: SECURITY / PASSWORD CHANGE -->
+                <div id="adm-tab-content-security" class="hidden">
+                    <form onsubmit="handleAdminPasswordChange(event)" class="bg-darkCard p-6 rounded-2xl border border-purple-500/30 space-y-4 max-w-md">
+                        <h4 class="font-heading font-bold text-white text-base">馃攼 Cambiar Contrase帽a de Administrador</h4>
+                        <p class="text-xs text-gray-400">Cuenta asociada: <strong class="text-neonCyan">vio2015@outlook.com</strong></p>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Contrase帽a Actual *</label>
+                            <input type="password" id="adm-curr-pass" required class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Nueva Contrase帽a *</label>
+                            <input type="password" id="adm-new-pass" required minlength="6" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Confirmar Nueva Contrase帽a *</label>
+                            <input type="password" id="adm-confirm-pass" required minlength="6" class="w-full bg-darkInput border border-gray-700 rounded-xl px-3 py-2 text-xs text-white">
+                        </div>
+                        <button type="submit" class="w-full py-3 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs">
+                            Actualizar Contrase帽a
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden transform transition-all duration-300">
+        <div class="glass-panel border border-neonCyan/50 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-xs font-semibold text-white">
+            <span id="toast-icon" class="text-base">鉁�</span>
+            <span id="toast-msg">Notificaci贸n</span>
+        </div>
+    </div>
+
+    <!-- ==================== FIREBASE SDK & APPLICATION LOGIC ==================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import {
+            getAuth,
+            signInWithEmailAndPassword,
+            createUserWithEmailAndPassword,
+            sendEmailVerification,
+            updatePassword,
+            reauthenticateWithCredential,
+            EmailAuthProvider,
+            signOut,
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import {
+            getFirestore,
+            doc,
+            setDoc,
+            onSnapshot
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // =========================================================================
+        // PASO 1: PEGA AQU脥 LAS LLAVES DE TU PROYECTO DE FIREBASE
+        // (Consola Firebase > Configuraci贸n del proyecto > Tus apps > Web)
+        // =========================================================================
+        const FIREBASE_CONFIG = {
+            apiKey: 
+            "AIzaSyDYZm⁵-yFhLuD4u9nX8xXjkxkZ5PpU9z_4",
+  authDomain: "vio-tecno-store.firebaseapp.com",
+  projectId: "vio-tecno-store",
+  storageBucket: "vio-tecno-store.firebasestorage.app",
+  messagingSenderId: "271903004993",
+  appId: "1:271903004993:web:a67010e4ad0c8e92e2e9c0",
+  measurementId: "G-17TCHVFZRD"
+};
+
+        const ADMIN_EMAIL = 'vio2015@outlook.com';
+        let adminPassword = localStorage.getItem('vt_admin_password') || 'viotecno2026';
+        let isAdminLoggedIn = sessionStorage.getItem('vt_admin_session') === 'true';
+
+        // Detecta autom谩ticamente si ya pegaste tus llaves reales de Firebase
+        const isFirebaseConfigured = FIREBASE_CONFIG.apiKey && !FIREBASE_CONFIG.apiKey.startsWith("PEGA_AQUI");
+        let fbAuth = null;
+        let fbDb = null;
+
+        const initialProducts = [
+            {
+                id: 'p1',
+                name: 'Faceshell Magn茅tico Raimi Style V3',
+                type: 'faceshell',
+                sizes: ['CH', 'M', 'G'],
+                priceMXN: 1450,
+                priceUSD: 78,
+                badge: 'M谩s Vendido',
+                imageUrl: '',
+                stlDownloadUrl: '',
+                description: 'Impresi贸n de alta resistencia con lentes magn茅ticos desmontables y malla anti-empa帽amiento.'
+            },
+            {
+                id: 'p2',
+                name: 'Archivo 3D STL 鈥� Faceshell PS5 Advanced',
+                type: 'stl',
+                sizes: [],
+                priceMXN: 390,
+                priceUSD: 22,
+                badge: 'Archivo 3D STL',
+                imageUrl: '',
+                stlDownloadUrl: 'https://drive.google.com/drive/folders/ejemplo-stl-ps5',
+                description: 'Archivos optimizados para impresi贸n FDM/Resina con alojamientos para imanes de neodimio de 8x3mm.'
+            },
+            {
+                id: 'p3',
+                name: 'Traje Spandex Sublimado 4-Way Stretch',
+                type: 'traje',
+                sizes: ['CH', 'M', 'G'],
+                priceMXN: 2650,
+                priceUSD: 145,
+                badge: 'A Medida',
+                imageUrl: '',
+                stlDownloadUrl: '',
+                description: 'Tela el谩stica de alto gramaje con cierres ocultos y suelas integradas opcionales.'
+            },
+            {
+                id: 'p4',
+                name: 'Tela Texturizada Hexagonal Cosplay (Por Metro)',
+                type: 'tela',
+                sizes: [],
+                priceMXN: 320,
+                priceUSD: 18,
+                badge: 'Por Metro',
+                imageUrl: '',
+                stlDownloadUrl: '',
+                description: 'Licra con relieve hexagonal ideal para trajes de superh茅roes. Ancho de 1.50m.'
+            }
+        ];
+
+        const initialIgPosts = [
+            {
+                id: 'ig1',
+                caption: 'Acabado final en lentes reflejantes y faceshell articulado para convenci贸n.',
+                link: 'https://www.instagram.com/viotecno2000/',
+                imageUrl: ''
+            },
+            {
+                id: 'ig2',
+                caption: 'Proceso de impresi贸n 3D y lijado automotriz en taller VIO TECNO.',
+                link: 'https://www.instagram.com/viotecno2000/',
+                imageUrl: ''
+            },
+            {
+                id: 'ig3',
+                caption: 'Env铆os semanales empacados y listos con gu铆as FedEx y DHL.',
+                link: 'https://www.instagram.com/viotecno2000/',
+                imageUrl: ''
+            }
+        ];
+
+        const initialFaqs = [
+            {
+                id: 'f1',
+                question: '驴C贸mo recibo mis archivos digitales 3D (STL)?',
+                answer: 'Una vez confirmado tu pago en PayPal, el enlace directo de descarga se habilita autom谩ticamente en tu cuenta dentro de "Mis Descargas 3D (STL)" y tambi茅n te llega por correo electr贸nico.'
+            },
+            {
+                id: 'f2',
+                question: '驴Qu茅 paqueter铆as utilizan para los env铆os en M茅xico?',
+                answer: 'Trabajamos con gu铆as oficiales a trav茅s de Skydropx utilizando FedEx Express y DHL Express, envi谩ndote tu n煤mero de rastreo directo a tu correo.'
+            },
+            {
+                id: 'f3',
+                question: '驴C贸mo elijo mi talla correcta de faceshell o traje?',
+                answer: 'Puedes hacer clic en "馃搹 Gu铆a de Tallas" en cualquier producto o en el men煤 superior para comparar tus medidas en cent铆metros.'
+            }
+        ];
+
+        const defaultSuitSizeRows = [
+            { size: 'Chica (CH)', height: '1.60 - 1.68 m', chest: '86 - 92 cm', waist: '72 - 78 cm', hip: '88 - 94 cm' },
+            { size: 'Mediana (M)', height: '1.69 - 1.77 m', chest: '93 - 100 cm', waist: '79 - 86 cm', hip: '95 - 102 cm' },
+            { size: 'Grande (G)', height: '1.78 - 1.86 m', chest: '101 - 108 cm', waist: '87 - 95 cm', hip: '103 - 110 cm' }
+        ];
+
+        const defaultHeadSizeRows = [
+            { size: 'Chica (CH)', circ: '53 - 55 cm', height: '20 - 21.5 cm' },
+            { size: 'Mediana (M)', circ: '56 - 58 cm', height: '21.6 - 23 cm' },
+            { size: 'Grande (G)', circ: '59 - 61 cm', height: '23.1 - 24.5 cm' }
+        ];
+
+        let dbProducts = JSON.parse(localStorage.getItem('vt_products')) || initialProducts;
+        let dbIgPosts = JSON.parse(localStorage.getItem('vt_ig')) || initialIgPosts;
+        let dbFaqs = JSON.parse(localStorage.getItem('vt_faqs')) || initialFaqs;
+        let dbOrders = JSON.parse(localStorage.getItem('vt_orders')) || [];
+        let dbUsers = JSON.parse(localStorage.getItem('vt_users')) || [];
+        let dbSettings = JSON.parse(localStorage.getItem('vt_settings')) || {
+            logoUrl: '',
+            guideSuitsUrl: '',
+            guideHeadsUrl: '',
+            suitSizeRows: defaultSuitSizeRows,
+            headSizeRows: defaultHeadSizeRows,
+            paypalAccount: 'vio2015@outlook.com',
+            paypalLink: 'https://www.paypal.com',
+            paypalNotes: 'Al realizar tu pago en PayPal, coloca tu n煤mero de pedido en la nota del env铆o para acreditar tu orden de inmediato.',
+            fedexCostMXN: 160,
+            fedexCostUSD: 8,
+            dhlCostMXN: 210,
+            dhlCostUSD: 11,
+            emailSubject: 'Actualizaci贸n de tu pedido {pedido} 鈥� VIO TECNO STORE',
+            emailBody: 'Hola {cliente},\n\nTe informamos que el estatus de tu pedido {pedido} ha cambiado a: {estatus}.\n\nPaqueter铆a: {paqueteria}\nN煤mero de gu铆a / rastreo: {guia}\n{descargas}\nGracias por confiar en VIO TECNO STORE.'
+        };
+        if (!dbSettings.suitSizeRows) dbSettings.suitSizeRows = defaultSuitSizeRows;
+        if (!dbSettings.headSizeRows) dbSettings.headSizeRows = defaultHeadSizeRows;
+
+        let currentCurrency = 'MXN';
+        let selectedCategory = 'todos';
+        let cart = [];
+        let currentCustomer = JSON.parse(sessionStorage.getItem('vt_customer_session')) || null;
+        let pendingRegistration = null;
+
+        function applySiteTheme(theme) {
+            const htmlEl = document.documentElement;
+            const iconEl = document.getElementById('theme-toggle-icon');
+            const labelEl = document.getElementById('theme-toggle-label');
+            if (theme === 'light') {
+                htmlEl.classList.remove('dark');
+                htmlEl.classList.add('light');
+                if (iconEl) iconEl.innerText = '馃寵';
+                if (labelEl) labelEl.innerText = 'Vista Oscura';
+            } else {
+                htmlEl.classList.remove('light');
+                htmlEl.classList.add('dark');
+                if (iconEl) iconEl.innerText = '鈽€锔�';
+                if (labelEl) labelEl.innerText = 'Fondo Blanco';
+            }
+            localStorage.setItem('vt_site_theme', theme);
+        }
+
+        function toggleSiteTheme() {
+            const isLight = document.documentElement.classList.contains('light');
+            const nextTheme = isLight ? 'dark' : 'light';
+            applySiteTheme(nextTheme);
+            showToast(nextTheme === 'light' ? 'Vista con Fondo Blanco activada' : 'Vista Oscura Ne贸n activada', nextTheme === 'light' ? '鈽€锔�' : '馃寵');
+        }
+
+        // =========================================================================
+        // SINCRONIZACI脫N EN TIEMPO REAL CON FIRESTORE (SI EST脕 CONFIGURADO)
+        // =========================================================================
+        if (isFirebaseConfigured) {
+            try {
+                const app = initializeApp(FIREBASE_CONFIG);
+                fbAuth = getAuth(app);
+                fbDb = getFirestore(app);
+
+                const syncBadge = document.getElementById('cloud-sync-badge');
+                if (syncBadge) {
+                    syncBadge.innerText = '鈽侊笍 Firebase Conectado';
+                    syncBadge.className = 'px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-[10px] font-mono text-emerald-300';
+                }
+
+                // Escuchar cambios en tiempo real desde la nube
+                onSnapshot(doc(fbDb, 'store_data', 'catalog'), (snap) => {
+                    if (snap.exists() && Array.isArray(snap.data().items)) {
+                        dbProducts = snap.data().items;
+                        renderStorefront();
+                        if (!document.getElementById('admin-modal').classList.contains('hidden')) renderAdminLists();
+                    }
+                });
+
+                onSnapshot(doc(fbDb, 'store_data', 'settings'), (snap) => {
+                    if (snap.exists()) {
+                        dbSettings = { ...dbSettings, ...snap.data() };
+                        renderStorefront();
+                    }
+                });
+
+                onSnapshot(doc(fbDb, 'store_data', 'ig_posts'), (snap) => {
+                    if (snap.exists() && Array.isArray(snap.data().items)) {
+                        dbIgPosts = snap.data().items;
+                        renderStorefront();
+                    }
+                });
+
+                onSnapshot(doc(fbDb, 'store_data', 'faqs'), (snap) => {
+                    if (snap.exists() && Array.isArray(snap.data().items)) {
+                        dbFaqs = snap.data().items;
+                        renderStorefront();
+                    }
+                });
+
+                onSnapshot(doc(fbDb, 'store_data', 'orders'), (snap) => {
+                    if (snap.exists() && Array.isArray(snap.data().items)) {
+                        dbOrders = snap.data().items;
+                        if (!document.getElementById('admin-modal').classList.contains('hidden')) renderAdminLists();
+                    }
+                });
+
+                onSnapshot(doc(fbDb, 'store_data', 'users'), (snap) => {
+                    if (snap.exists() && Array.isArray(snap.data().items)) {
+                        dbUsers = snap.data().items;
+                        if (!document.getElementById('admin-modal').classList.contains('hidden')) renderAdminLists();
+                    }
+                });
+            } catch (err) {
+                console.error('Firebase init error:', err);
+            }
+        }
+
+        async function saveDbState() {
+            localStorage.setItem('vt_products', JSON.stringify(dbProducts));
+            localStorage.setItem('vt_ig', JSON.stringify(dbIgPosts));
+            localStorage.setItem('vt_faqs', JSON.stringify(dbFaqs));
+            localStorage.setItem('vt_orders', JSON.stringify(dbOrders));
+            localStorage.setItem('vt_users', JSON.stringify(dbUsers));
+            localStorage.setItem('vt_settings', JSON.stringify(dbSettings));
+
+            renderStorefront();
+
+            if (isFirebaseConfigured && fbDb) {
+                try {
+                    await Promise.all([
+                        setDoc(doc(fbDb, 'store_data', 'catalog'), { items: dbProducts }),
+                        setDoc(doc(fbDb, 'store_data', 'ig_posts'), { items: dbIgPosts }),
+                        setDoc(doc(fbDb, 'store_data', 'faqs'), { items: dbFaqs }),
+                        setDoc(doc(fbDb, 'store_data', 'orders'), { items: dbOrders }),
+                        setDoc(doc(fbDb, 'store_data', 'users'), { items: dbUsers }),
+                        setDoc(doc(fbDb, 'store_data', 'settings'), dbSettings)
+                    ]);
+                } catch (err) {
+                    console.warn('Firestore sync warning:', err);
+                }
+            }
+        }
+
+        function formatMoney(mxn, usd) {
+            if (currentCurrency === 'USD') {
+                return `$${Number(usd || 0).toLocaleString('en-US')} USD`;
+            }
+            return `$${Number(mxn || 0).toLocaleString('es-MX')} MXN`;
+        }
+
+        function getProductImagesList(prod) {
+            if (Array.isArray(prod.images) && prod.images.length > 0) {
+                return prod.images.filter(u => u && u.trim() !== '');
+            }
+            if (prod.imageUrl && prod.imageUrl.trim() !== '') {
+                return [prod.imageUrl.trim()];
+            }
+            return [];
+        }
+
+        function setCardGallerySlide(prodId, idx) {
+            const imgs = document.querySelectorAll(`.gallery-slide-${prodId}`);
+            const thumbs = document.querySelectorAll(`.gallery-thumb-${prodId}`);
+            if (!imgs.length) return;
+            const total = imgs.length;
+            const target = ((idx % total) + total) % total;
+
+            imgs.forEach((el, i) => {
+                if (i === target) el.classList.remove('hidden');
+                else el.classList.add('hidden');
+            });
+            thumbs.forEach((el, i) => {
+                el.className = i === target
+                    ? `gallery-thumb-${prodId} w-8 h-8 rounded-lg overflow-hidden border-2 border-neonCyan shrink-0 transition`
+                    : `gallery-thumb-${prodId} w-8 h-8 rounded-lg overflow-hidden border border-gray-700 opacity-60 hover:opacity-100 shrink-0 transition`;
+            });
+            const counter = document.getElementById(`gallery-counter-${prodId}`);
+            if (counter) counter.innerText = `${target + 1}/${total}`;
+            const stateInput = document.getElementById(`gallery-idx-${prodId}`);
+            if (stateInput) stateInput.value = target;
+        }
+
+        function stepCardGallerySlide(prodId, delta) {
+            const stateInput = document.getElementById(`gallery-idx-${prodId}`);
+            const current = stateInput ? parseInt(stateInput.value, 10) || 0 : 0;
+            setCardGallerySlide(prodId, current + delta);
+        }
+
+        function getGraphicPlaceholder(type, imageUrlOrList, title, prodId = '') {
+            const list = Array.isArray(imageUrlOrList)
+                ? imageUrlOrList.filter(u => u && u.trim() !== '')
+                : (imageUrlOrList && imageUrlOrList.trim() !== '' ? [imageUrlOrList.trim()] : []);
+
+            if (list.length === 1) {
+                return `<img src="${list[0]}" alt="${title}" onerror="this.style.display='none'" class="w-full h-48 object-cover rounded-2xl border border-purple-500/20">`;
+            }
+
+            if (list.length > 1 && prodId) {
+                const slidesHtml = list.map((url, idx) => `
+                    <img src="${url}" alt="${title} (${idx + 1})" onerror="this.style.display='none'" class="gallery-slide-${prodId} ${idx === 0 ? '' : 'hidden'} w-full h-48 object-cover rounded-2xl border border-purple-500/20 transition">
+                `).join('');
+
+                const thumbsHtml = list.map((url, idx) => `
+                    <button type="button" onclick="setCardGallerySlide('${prodId}', ${idx})" class="gallery-thumb-${prodId} w-8 h-8 rounded-lg overflow-hidden border-2 ${idx === 0 ? 'border-neonCyan' : 'border-gray-700 opacity-60 hover:opacity-100'} shrink-0 transition">
+                        <img src="${url}" alt="Miniatura ${idx + 1}" class="w-full h-full object-cover">
+                    </button>
+                `).join('');
+
+                return `
+                    <div class="relative group/gal">
+                        <input type="hidden" id="gallery-idx-${prodId}" value="0">
+                        ${slidesHtml}
+                        <button type="button" onclick="stepCardGallerySlide('${prodId}', -1)" aria-label="Foto anterior" class="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-darkBg/85 border border-purple-500/50 text-white hover:border-neonCyan flex items-center justify-center text-sm font-bold shadow-md">鈥�</button>
+                        <button type="button" onclick="stepCardGallerySlide('${prodId}', 1)" aria-label="Foto siguiente" class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-darkBg/85 border border-purple-500/50 text-white hover:border-neonCyan flex items-center justify-center text-sm font-bold shadow-md">鈥�</button>
+                        <span id="gallery-counter-${prodId}" class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-darkBg/85 border border-gray-700 text-[10px] font-mono text-neonCyan">1/${list.length}</span>
+                        <div class="flex items-center gap-1.5 mt-2 overflow-x-auto pb-0.5">
+                            ${thumbsHtml}
+                        </div>
+                    </div>
+                `;
+            }
+
+            const iconMap = {
+                faceshell: { icon: '馃幁', label: 'FACESHELL / M脕SCARA 3D', grad: 'from-purple-950 via-indigo-950 to-darkInput' },
+                stl: { icon: '馃', label: 'ARCHIVO DIGITAL 3D STL', grad: 'from-cyan-950 via-slate-900 to-darkInput' },
+                traje: { icon: '馃暦锔�', label: 'TRAJE COSPLAY A MEDIDA', grad: 'from-fuchsia-950 via-purple-950 to-darkInput' },
+                tela: { icon: '馃У', label: 'TELA ESPECIALIZADA', grad: 'from-indigo-950 via-cyan-950 to-darkInput' },
+                ig: { icon: '馃摳', label: 'VIO TECNO STUDIO', grad: 'from-purple-950 via-pink-950 to-darkInput' }
+            };
+            const cfg = iconMap[type] || iconMap.faceshell;
+            return `
+                <div class="placeholder-card-box w-full h-48 rounded-2xl bg-gradient-to-br ${cfg.grad} border border-purple-500/25 flex flex-col items-center justify-center p-4 text-center">
+                    <span class="text-4xl mb-2 drop-shadow">${cfg.icon}</span>
+                    <span class="text-[10px] font-heading font-bold tracking-widest text-neonCyan uppercase">${cfg.label}</span>
+                </div>
+            `;
+        }
+
+        function setCurrency(curr) {
+            currentCurrency = curr;
+            document.getElementById('btn-curr-mxn').className = curr === 'MXN'
+                ? 'px-2.5 py-1 rounded-lg bg-neonPurple text-white transition'
+                : 'px-2.5 py-1 rounded-lg text-gray-400 hover:text-white transition';
+            document.getElementById('btn-curr-usd').className = curr === 'USD'
+                ? 'px-2.5 py-1 rounded-lg bg-neonPurple text-white transition'
+                : 'px-2.5 py-1 rounded-lg text-gray-400 hover:text-white transition';
+            renderStorefront();
+            renderCart();
+        }
+
+        function filterCatalog(cat) {
+            selectedCategory = cat;
+            const labels = { todos: 'Todos', stl: 'Archivos 3D (STL)', faceshell: 'M谩scaras / Faceshells', traje: 'Trajes', tela: 'Telas' };
+            document.getElementById('active-category-badge').innerText = labels[cat] || 'Todos';
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                btn.className = btn.dataset.cat === cat
+                    ? 'cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-neonPurple text-white transition'
+                    : 'cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-darkCard border border-gray-800 text-gray-300 hover:border-neonCyan transition';
+            });
+            renderStorefront();
+        }
+
+        function selectCardOption(prodId, val, btnEl) {
+            document.getElementById(`selected-opt-${prodId}`).value = val;
+            document.querySelectorAll(`.opt-btn-${prodId}`).forEach(b => {
+                b.className = `opt-btn-${prodId} px-2.5 py-1.5 rounded-lg text-xs font-bold border border-gray-700 bg-darkInput text-gray-300 hover:border-neonCyan`;
+            });
+            btnEl.className = `opt-btn-${prodId} px-2.5 py-1.5 rounded-lg text-xs font-bold border border-neonCyan bg-cyan-950/70 text-neonCyan`;
+        }
+
+        function renderStorefront() {
+            const logoInner = document.getElementById('header-logo-inner');
+            if (dbSettings.logoUrl && dbSettings.logoUrl.trim() !== '') {
+                logoInner.innerHTML = `<img src="${dbSettings.logoUrl}" alt="VIO TECNO STORE" class="h-11 w-auto object-contain rounded-xl">`;
+            }
+
+            if (dbSettings.guideSuitsUrl) {
+                document.getElementById('sg-img-suits').src = dbSettings.guideSuitsUrl;
+                document.getElementById('sg-img-suits-container').classList.remove('hidden');
+            }
+            if (dbSettings.guideHeadsUrl) {
+                document.getElementById('sg-img-heads').src = dbSettings.guideHeadsUrl;
+                document.getElementById('sg-img-heads-container').classList.remove('hidden');
+            }
+            renderSizeGuideTables();
+
+            const filtered = selectedCategory === 'todos'
+                ? dbProducts
+                : dbProducts.filter(p => p.type === selectedCategory);
+
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = filtered.map(prod => {
+                const isOutOfStock = Boolean(prod.outOfStock);
+                const needsSize = (prod.type === 'traje' || prod.type === 'faceshell');
+                const isTela = prod.type === 'tela';
+                const isStl = prod.type === 'stl';
+
+                let selectorHtml = '';
+                if (needsSize) {
+                    const sizesList = (Array.isArray(prod.sizes) && prod.sizes.length > 0) ? prod.sizes : ['CH', 'M', 'G'];
+                    const defaultSize = sizesList.includes('M') ? 'M' : sizesList[0];
+                    const buttonsHtml = sizesList.map(sz => {
+                        const isSelected = sz === defaultSize;
+                        const activeCls = isSelected
+                            ? 'border-neonCyan bg-cyan-950/70 text-neonCyan'
+                            : 'border-gray-700 bg-darkInput text-gray-300 hover:border-neonCyan';
+                        return `<button type="button" ${isOutOfStock ? 'disabled' : ''} onclick="selectCardOption('${prod.id}', '${sz.replace(/'/g, "\\'")}', this)" class="opt-btn-${prod.id} px-2.5 py-1.5 rounded-lg text-xs font-bold border ${activeCls} ${isOutOfStock ? 'opacity-50 cursor-not-allowed' : ''}">${sz}</button>`;
+                    }).join('');
+
+                    selectorHtml = `
+                        <div class="mt-3">
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-[11px] font-semibold text-gray-300">Talla Disponible:</span>
+                                <button type="button" onclick="openSizeGuideModal('${prod.type === 'faceshell' ? 'heads' : 'suits'}')" class="text-[10px] text-neonCyan hover:underline">馃搹 Ver medidas</button>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5" id="size-group-${prod.id}">
+                                ${buttonsHtml}
+                            </div>
+                            <input type="hidden" id="selected-opt-${prod.id}" value="${defaultSize}">
+                        </div>
+                    `;
+                } else if (isTela) {
+                    selectorHtml = `
+                        <div class="mt-3 flex items-center justify-between bg-darkInput px-3 py-2 rounded-xl border border-gray-800 ${isOutOfStock ? 'opacity-50' : ''}">
+                            <span class="text-[11px] font-semibold text-gray-300">Metros a pedir:</span>
+                            <input type="number" id="selected-opt-${prod.id}" value="1" min="1" max="50" ${isOutOfStock ? 'disabled' : ''} class="w-16 bg-darkBg border border-gray-700 rounded-lg px-2 py-1 text-center text-xs text-white font-bold">
+                        </div>
+                    `;
+                } else if (isStl) {
+                    selectorHtml = `
+                        <div class="mt-3 px-3 py-2 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-[11px] text-neonCyan font-medium">
+                            鈿� Entrega digital privada al acreditar pago
+                        </div>
+                    `;
+                }
+
+                const topBadgeHtml = isOutOfStock
+                    ? `<span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-extrabold bg-red-950/95 border border-red-500 text-red-200 shadow-lg">馃毇 AGOTADO</span>`
+                    : (prod.badge ? `<span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-darkBg/90 border border-neonPurple text-purple-200">${prod.badge}</span>` : '');
+
+                const actionButtonHtml = isOutOfStock
+                    ? `<button type="button" disabled class="px-4 py-2.5 rounded-xl bg-gray-800/90 border border-red-500/40 text-red-300 font-bold text-xs cursor-not-allowed opacity-80">馃毇 Agotado</button>`
+                    : `<button type="button" onclick="addToCart('${prod.id}')" class="px-4 py-2.5 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs transition shadow-md">+ Agregar</button>`;
+
+                return `
+                    <article class="glass-panel rounded-3xl p-4 flex flex-col justify-between ${isOutOfStock ? 'border-red-500/30 opacity-85' : 'hover:border-neonPurple/60'} transition group">
+                        <div>
+                            <div class="relative ${isOutOfStock ? 'grayscale-[45%]' : ''}">
+                                ${getGraphicPlaceholder(prod.type, getProductImagesList(prod), prod.name, prod.id)}
+                                ${topBadgeHtml}
+                            </div>
+                            <div class="mt-4 space-y-1.5">
+                                <h3 class="font-heading font-bold text-base text-white ${isOutOfStock ? '' : 'group-hover:text-neonCyan'} transition">${prod.name}</h3>
+                                <p class="text-xs text-gray-400 line-clamp-2 leading-relaxed">${prod.description}</p>
+                            </div>
+                            ${selectorHtml}
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-gray-800/80 flex items-center justify-between gap-3">
+                            <div>
+                                <span class="text-[10px] text-gray-400 block">Precio</span>
+                                <span class="font-heading font-black text-lg text-white">${formatMoney(prod.priceMXN, prod.priceUSD)}</span>
+                            </div>
+                            ${actionButtonHtml}
+                        </div>
+                    </article>
+                `;
+            }).join('');
+
+            const igGrid = document.getElementById('instagram-posts-grid');
+            if (igGrid) {
+                igGrid.innerHTML = dbIgPosts.map(post => `
+                    <a href="${post.link || 'https://www.instagram.com/viotecno2000/'}" target="_blank" rel="noopener noreferrer" class="glass-panel rounded-3xl p-4 block hover:border-pink-500/50 transition space-y-3">
+                        ${getGraphicPlaceholder('ig', post.imageUrl, post.caption)}
+                        <p class="text-xs text-gray-300 leading-relaxed">${post.caption}</p>
+                        <span class="text-[11px] font-bold text-neonCyan inline-block">Ver en Instagram 鈫�</span>
+                    </a>
+                `).join('');
+            }
+
+            renderFaqs();
+        }
+
+        function renderFaqs() {
+            const container = document.getElementById('faq-list-container');
+            if (!container) return;
+            container.innerHTML = dbFaqs.map((f, index) => `
+                <details class="glass-panel rounded-2xl p-5 group" ${index === 0 ? 'open' : ''}>
+                    <summary class="font-bold text-sm text-white cursor-pointer flex items-center justify-between list-none">
+                        <span>${f.question}</span>
+                        <span class="text-neonCyan group-open:rotate-180 transition">鈻�</span>
+                    </summary>
+                    <p class="text-xs text-gray-300 mt-3 leading-relaxed">${f.answer}</p>
+                </details>
+            `).join('');
+        }
+
+        function renderSizeGuideTables() {
+            const suitsBody = document.getElementById('sg-tbody-suits');
+            const headsBody = document.getElementById('sg-tbody-heads');
+            if (suitsBody) {
+                suitsBody.innerHTML = (dbSettings.suitSizeRows || []).map(r => `
+                    <tr>
+                        <td class="px-4 py-3 font-extrabold text-neonCyan">${r.size}</td>
+                        <td class="px-4 py-3">${r.height}</td>
+                        <td class="px-4 py-3">${r.chest}</td>
+                        <td class="px-4 py-3">${r.waist}</td>
+                        <td class="px-4 py-3">${r.hip}</td>
+                    </tr>
+                `).join('');
+            }
+            if (headsBody) {
+                headsBody.innerHTML = (dbSettings.headSizeRows || []).map(r => `
+                    <tr>
+                        <td class="px-4 py-3 font-extrabold text-neonCyan">${r.size}</td>
+                        <td class="px-4 py-3">${r.circ}</td>
+                        <td class="px-4 py-3">${r.height}</td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        // CART & CHECKOUT FUNCTIONS
+        function addToCart(prodId) {
+            const prod = dbProducts.find(p => p.id === prodId);
+            if (!prod) return;
+            if (prod.outOfStock) {
+                showToast('Este art铆culo se encuentra agotado temporalmente', '馃毇');
+                return;
+            }
+
+            let optionLabel = '脷nica';
+            let qty = 1;
+
+            if (prod.type === 'traje' || prod.type === 'faceshell') {
+                const optEl = document.getElementById(`selected-opt-${prodId}`);
+                optionLabel = optEl ? `Talla ${optEl.value}` : 'Talla M';
+            } else if (prod.type === 'tela') {
+                const mEl = document.getElementById(`selected-opt-${prodId}`);
+                qty = mEl ? Math.max(1, parseInt(mEl.value, 10) || 1) : 1;
+                optionLabel = 'Por Metro';
+            } else if (prod.type === 'stl') {
+                optionLabel = 'Descarga Digital STL';
+            }
+
+            const existingIdx = cart.findIndex(item => item.prodId === prodId && item.optionLabel === optionLabel);
+            if (existingIdx > -1) {
+                cart[existingIdx].qty += qty;
+            } else {
+                cart.push({
+                    prodId: prod.id,
+                    name: prod.name,
+                    type: prod.type,
+                    optionLabel,
+                    qty,
+                    priceMXN: prod.priceMXN,
+                    priceUSD: prod.priceUSD,
+                    stlDownloadUrl: prod.stlDownloadUrl || ''
+                });
+            }
+
+            renderCart();
+            showToast(`"${prod.name}" agregado al carrito`, '馃洅');
+        }
+
+        function removeFromCart(idx) {
+            cart.splice(idx, 1);
+            renderCart();
+        }
+
+        function renderCart() {
+            const badge = document.getElementById('cart-badge');
+            const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+            badge.innerText = totalQty;
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="text-center py-12 text-xs text-gray-400">Tu carrito est谩 vac铆o. Explora el cat谩logo para agregar productos.</div>`;
+                document.getElementById('cart-subtotal-label').innerText = formatMoney(0, 0);
+                return;
+            }
+
+            let subMXN = 0;
+            let subUSD = 0;
+
+            container.innerHTML = cart.map((item, idx) => {
+                subMXN += item.priceMXN * item.qty;
+                subUSD += item.priceUSD * item.qty;
+                return `
+                    <div class="p-3.5 rounded-2xl bg-darkInput border border-gray-800 flex items-center justify-between gap-3">
+                        <div>
+                            <p class="text-xs font-bold text-white">${item.name}</p>
+                            <p class="text-[11px] text-neonCyan">${item.optionLabel} 脳 ${item.qty}</p>
+                            <p class="text-xs font-bold text-gray-300 mt-1">${formatMoney(item.priceMXN * item.qty, item.priceUSD * item.qty)}</p>
+                        </div>
+                        <button type="button" onclick="removeFromCart(${idx})" class="p-2 rounded-lg bg-darkBg text-red-400 hover:text-red-300 text-xs">馃棏锔�</button>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('cart-subtotal-label').innerText = formatMoney(subMXN, subUSD);
+        }
+
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+            renderCart();
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                showToast('Agrega al menos un producto al carrito primero', '鈿狅笍');
+                return;
+            }
+            document.getElementById('cart-drawer').classList.add('hidden');
+            document.getElementById('checkout-modal').classList.remove('hidden');
+
+            if (currentCustomer) {
+                document.getElementById('chk-name').value = currentCustomer.name || '';
+                document.getElementById('chk-email').value = currentCustomer.email || '';
+                document.getElementById('chk-phone').value = currentCustomer.phone || '';
+            }
+
+            const hasPhysical = cart.some(item => item.type !== 'stl');
+            const shipBlock = document.getElementById('physical-shipping-fields');
+            const reqIds = ['chk-street', 'chk-colony', 'chk-zip', 'chk-city', 'chk-state'];
+
+            if (hasPhysical) {
+                shipBlock.classList.remove('hidden');
+                reqIds.forEach(id => document.getElementById(id).setAttribute('required', 'required'));
+            } else {
+                shipBlock.classList.add('hidden');
+                reqIds.forEach(id => document.getElementById(id).removeAttribute('required'));
+            }
+
+            document.getElementById('chk-paypal-account-display').innerText = dbSettings.paypalAccount || 'vio2015@outlook.com';
+            document.getElementById('chk-paypal-notes-display').innerText = dbSettings.paypalNotes || '';
+            document.getElementById('label-fedex-cost').innerText = formatMoney(dbSettings.fedexCostMXN || 160, dbSettings.fedexCostUSD || 8);
+            document.getElementById('label-dhl-cost').innerText = formatMoney(dbSettings.dhlCostMXN || 210, dbSettings.dhlCostUSD || 11);
+
+            recalculateCheckoutTotal();
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function recalculateCheckoutTotal() {
+            const subMXN = cart.reduce((acc, i) => acc + (i.priceMXN * i.qty), 0);
+            const subUSD = cart.reduce((acc, i) => acc + (i.priceUSD * i.qty), 0);
+            const hasPhysical = cart.some(item => item.type !== 'stl');
+
+            let shipMXN = 0;
+            let shipUSD = 0;
+
+            if (hasPhysical) {
+                const selectedCarrier = document.querySelector('input[name="carrier"]:checked')?.value || 'FedEx';
+                if (selectedCarrier === 'DHL') {
+                    shipMXN = Number(dbSettings.dhlCostMXN || 210);
+                    shipUSD = Number(dbSettings.dhlCostUSD || 11);
+                } else {
+                    shipMXN = Number(dbSettings.fedexCostMXN || 160);
+                    shipUSD = Number(dbSettings.fedexCostUSD || 8);
+                }
+            }
+
+            document.getElementById('chk-final-total').innerText = formatMoney(subMXN + shipMXN, subUSD + shipUSD);
+        }
+
+        async function processPayPalOrder(e) {
+            e.preventDefault();
+            const hasPhysical = cart.some(item => item.type !== 'stl');
+            const carrier = hasPhysical ? (document.querySelector('input[name="carrier"]:checked')?.value || 'FedEx') : 'Entrega Digital STL';
+
+            const subMXN = cart.reduce((acc, i) => acc + (i.priceMXN * i.qty), 0);
+            const subUSD = cart.reduce((acc, i) => acc + (i.priceUSD * i.qty), 0);
+            const shipMXN = hasPhysical ? (carrier === 'DHL' ? Number(dbSettings.dhlCostMXN || 210) : Number(dbSettings.fedexCostMXN || 160)) : 0;
+            const shipUSD = hasPhysical ? (carrier === 'DHL' ? Number(dbSettings.dhlCostUSD || 11) : Number(dbSettings.fedexCostUSD || 8)) : 0;
+
+            const finalTotalStr = formatMoney(subMXN + shipMXN, subUSD + shipUSD);
+            const orderId = 'VT-' + Math.floor(100000 + Math.random() * 900000);
+
+            const newOrder = {
+                id: orderId,
+                date: new Date().toLocaleDateString('es-MX'),
+                customerName: document.getElementById('chk-name').value.trim(),
+                customerEmail: document.getElementById('chk-email').value.trim().toLowerCase(),
+                customerPhone: document.getElementById('chk-phone').value.trim(),
+                hasPhysical,
+                street: hasPhysical ? document.getElementById('chk-street').value.trim() : '',
+                colony: hasPhysical ? document.getElementById('chk-colony').value.trim() : '',
+                zip: hasPhysical ? document.getElementById('chk-zip').value.trim() : '',
+                city: hasPhysical ? document.getElementById('chk-city').value.trim() : '',
+                state: hasPhysical ? document.getElementById('chk-state').value.trim() : '',
+                refs: hasPhysical ? document.getElementById('chk-refs').value.trim() : '',
+                carrier,
+                items: [...cart],
+                totalFormatted: finalTotalStr,
+                status: 'Pago Pendiente',
+                trackingNumber: ''
+            };
+
+            dbOrders.unshift(newOrder);
+
+            if (!dbUsers.some(u => u.email === newOrder.customerEmail)) {
+                dbUsers.unshift({
+                    name: newOrder.customerName,
+                    email: newOrder.customerEmail,
+                    phone: newOrder.customerPhone,
+                    verified: false,
+                    registeredAt: newOrder.date
+                });
+            }
+
+            await saveDbState();
+            cart = [];
+            renderCart();
+            closeCheckoutModal();
+
+            document.getElementById('succ-order-id').innerText = orderId;
+            document.getElementById('succ-order-total').innerText = finalTotalStr;
+            document.getElementById('succ-paypal-acc').innerText = dbSettings.paypalAccount || 'vio2015@outlook.com';
+            document.getElementById('succ-paypal-instructions').innerText = dbSettings.paypalNotes || '';
+            document.getElementById('succ-paypal-btn').href = dbSettings.paypalLink || 'https://www.paypal.com';
+            document.getElementById('order-success-modal').classList.remove('hidden');
+
+            showToast(`Pedido ${orderId} guardado y notificado a ${ADMIN_EMAIL}`, '馃摡');
+        }
+
+        function closeOrderSuccessModal() {
+            document.getElementById('order-success-modal').classList.add('hidden');
+        }
+
+        // UNIFIED AUTH & CUSTOMER ACCOUNT
+        function updateAdminStateUI() {
+            const adminBar = document.getElementById('admin-active-bar');
+            const userLabel = document.getElementById('header-user-label');
+            if (isAdminLoggedIn) {
+                if (adminBar) adminBar.classList.remove('hidden');
+                if (userLabel) userLabel.innerText = 'Admin';
+            } else if (currentCustomer) {
+                if (adminBar) adminBar.classList.add('hidden');
+                if (userLabel) userLabel.innerText = currentCustomer.name.split(' ')[0];
+            } else {
+                if (adminBar) adminBar.classList.add('hidden');
+                if (userLabel) userLabel.innerText = 'Entrar';
+            }
+        }
+
+        function handleUserIconClick() {
+            if (isAdminLoggedIn) {
+                openAdminModal();
+                return;
+            }
+            document.getElementById('user-auth-modal').classList.remove('hidden');
+            if (currentCustomer) {
+                renderCustomerDashboard();
+            } else {
+                document.getElementById('cust-logged-panel').classList.add('hidden');
+                document.getElementById('cust-guest-panel').classList.remove('hidden');
+                switchAuthTab('login');
+            }
+        }
+
+        function closeUserAuthModal() {
+            document.getElementById('user-auth-modal').classList.add('hidden');
+        }
+
+        function switchAuthTab(tab) {
+            clearLoginError();
+            document.getElementById('verify-email-form').classList.add('hidden');
+            if (tab === 'login') {
+                document.getElementById('unified-login-form').classList.remove('hidden');
+                document.getElementById('customer-register-form').classList.add('hidden');
+                document.getElementById('tab-btn-login').className = 'py-2 rounded-lg bg-neonPurple text-white transition';
+                document.getElementById('tab-btn-register').className = 'py-2 rounded-lg text-gray-400 hover:text-white transition';
+            } else {
+                document.getElementById('unified-login-form').classList.add('hidden');
+                document.getElementById('customer-register-form').classList.remove('hidden');
+                document.getElementById('tab-btn-register').className = 'py-2 rounded-lg bg-neonPurple text-white transition';
+                document.getElementById('tab-btn-login').className = 'py-2 rounded-lg text-gray-400 hover:text-white transition';
+            }
+        }
+
+        function showLoginError(message, showRegisterShortcut = false) {
+            const banner = document.getElementById('login-error-banner');
+            const textEl = document.getElementById('login-error-text');
+            const regBtn = document.getElementById('login-go-register-btn');
+            if (!banner || !textEl) return;
+            textEl.innerText = message;
+            banner.classList.remove('hidden');
+            if (regBtn) {
+                if (showRegisterShortcut) regBtn.classList.remove('hidden');
+                else regBtn.classList.add('hidden');
+            }
+        }
+
+        function clearLoginError() {
+            const banner = document.getElementById('login-error-banner');
+            if (banner) banner.classList.add('hidden');
+        }
+
+        function goToRegisterWithEmail() {
+            const emailVal = document.getElementById('login-email').value.trim();
+            switchAuthTab('register');
+            if (emailVal) document.getElementById('reg-email').value = emailVal;
+        }
+
+        async function handleUnifiedLogin(e) {
+            e.preventDefault();
+            clearLoginError();
+            const email = document.getElementById('login-email').value.trim().toLowerCase();
+            const pass = document.getElementById('login-pass').value;
+
+            // Si Firebase est谩 activo, autenticar contra Firebase Auth real
+            if (isFirebaseConfigured && fbAuth) {
+                try {
+                    const cred = await signInWithEmailAndPassword(fbAuth, email, pass);
+                    if (email === ADMIN_EMAIL) {
+                        isAdminLoggedIn = true;
+                        sessionStorage.setItem('vt_admin_session', 'true');
+                        updateAdminStateUI();
+                        closeUserAuthModal();
+                        openAdminModal();
+                        showToast('Bienvenido Administrador VIO TECNO', '馃憫');
+                    } else {
+                        const profile = dbUsers.find(u => u.email === email) || {
+                            name: email.split('@')[0],
+                            email,
+                            phone: '',
+                            verified: cred.user.emailVerified
+                        };
+                        profile.verified = cred.user.emailVerified;
+                        currentCustomer = profile;
+                        sessionStorage.setItem('vt_customer_session', JSON.stringify(profile));
+                        updateAdminStateUI();
+                        renderCustomerDashboard();
+                        showToast(`Bienvenido, ${profile.name}`, '馃憢');
+                    }
+                    return;
+                } catch (err) {
+                    const code = err?.code || '';
+                    if (code === 'auth/user-not-found') {
+                        showLoginError('鉂� Esta cuenta no est谩 registrada. Verifica tu correo o crea una cuenta nueva.', true);
+                    } else if (code === 'auth/wrong-password') {
+                        showLoginError('馃敀 La contrase帽a ingresada no coincide con esta cuenta.', false);
+                    } else if (code === 'auth/invalid-credential') {
+                        const existsLocally = (email === ADMIN_EMAIL) || dbUsers.some(u => u.email === email);
+                        if (existsLocally) {
+                            showLoginError('馃敀 La contrase帽a ingresada no coincide con esta cuenta.', false);
+                        } else {
+                            showLoginError('鉂� Cuenta no registrada o contrase帽a incorrecta. Si a煤n no tienes cuenta, reg铆strate abajo.', true);
+                        }
+                    } else if (code === 'auth/too-many-requests') {
+                        showLoginError('鈴� Demasiados intentos fallidos. Espera unos minutos antes de volver a intentar.', false);
+                    } else {
+                        showLoginError('鈿狅笍 No se pudo iniciar sesi贸n: ' + (err.message || 'Verifica tus datos.'), false);
+                    }
+                    return;
+                }
+            }
+
+            // Respaldo local cuando a煤n no pegas tus llaves de Firebase
+            if (email === ADMIN_EMAIL) {
+                if (pass !== adminPassword) {
+                    showLoginError('馃敀 La contrase帽a de administrador no coincide.', false);
+                    return;
+                }
+                isAdminLoggedIn = true;
+                sessionStorage.setItem('vt_admin_session', 'true');
+                updateAdminStateUI();
+                closeUserAuthModal();
+                openAdminModal();
+                showToast('Bienvenido Administrador VIO TECNO', '馃憫');
+                return;
+            }
+
+            const existingAccount = dbUsers.find(u => u.email === email);
+            if (!existingAccount) {
+                showLoginError('鉂� Esta cuenta no est谩 registrada en la tienda.', true);
+                return;
+            }
+
+            if (existingAccount.password !== pass) {
+                showLoginError('馃敀 La contrase帽a ingresada no coincide con esta cuenta.', false);
+                return;
+            }
+
+            currentCustomer = existingAccount;
+            sessionStorage.setItem('vt_customer_session', JSON.stringify(existingAccount));
+            updateAdminStateUI();
+            renderCustomerDashboard();
+            showToast(`Bienvenido de nuevo, ${existingAccount.name}`, '馃憢');
+        }
+
+        async function handleCustomerRegister(e) {
+            e.preventDefault();
+            const email = document.getElementById('reg-email').value.trim().toLowerCase();
+            const name = document.getElementById('reg-name').value.trim();
+            const phone = document.getElementById('reg-phone').value.trim();
+            const password = document.getElementById('reg-pass').value;
+
+            if (email === ADMIN_EMAIL || dbUsers.some(u => u.email === email)) {
+                showToast('Este correo ya est谩 registrado. Inicia sesi贸n.', '鈿狅笍');
+                return;
+            }
+
+            // Si Firebase est谩 activo, crea usuario y manda correo real de verificaci贸n
+            if (isFirebaseConfigured && fbAuth) {
+                try {
+                    const cred = await createUserWithEmailAndPassword(fbAuth, email, password);
+                    await sendEmailVerification(cred.user);
+
+                    const newUser = {
+                        name,
+                        email,
+                        phone,
+                        verified: false,
+                        registeredAt: new Date().toLocaleDateString('es-MX')
+                    };
+                    dbUsers.unshift(newUser);
+                    await saveDbState();
+                    currentCustomer = newUser;
+                    sessionStorage.setItem('vt_customer_session', JSON.stringify(newUser));
+                    updateAdminStateUI();
+                    renderCustomerDashboard();
+                    showToast(`隆Cuenta creada! Revisa ${email} para verificar tu correo.`, '馃摡');
+                    return;
+                } catch (err) {
+                    showToast('No se pudo registrar en Firebase: ' + err.message, '鈿狅笍');
+                    return;
+                }
+            }
+
+            // Simulaci贸n local si a煤n no conectas Firebase
+            const code = String(Math.floor(100000 + Math.random() * 900000));
+            pendingRegistration = { name, email, phone, password, code };
+
+            document.getElementById('customer-register-form').classList.add('hidden');
+            document.getElementById('verify-email-form').classList.remove('hidden');
+            document.getElementById('demo-code-hint').innerText = `C贸digo demo: ${code}`;
+            showToast(`C贸digo de verificaci贸n enviado a ${email}`, '馃摡');
+        }
+
+        async function handleVerifyCustomerEmail(e) {
+            e.preventDefault();
+            if (!pendingRegistration) return;
+            const entered = document.getElementById('verify-code-input').value.trim();
+            if (entered !== pendingRegistration.code) {
+                showToast('C贸digo incorrecto. Revisa el c贸digo enviado.', '鈿狅笍');
+                return;
+            }
+
+            const verifiedUser = {
+                name: pendingRegistration.name,
+                email: pendingRegistration.email,
+                phone: pendingRegistration.phone,
+                password: pendingRegistration.password,
+                verified: true,
+                registeredAt: new Date().toLocaleDateString('es-MX')
+            };
+
+            dbUsers.unshift(verifiedUser);
+            await saveDbState();
+            currentCustomer = verifiedUser;
+            sessionStorage.setItem('vt_customer_session', JSON.stringify(verifiedUser));
+            pendingRegistration = null;
+            updateAdminStateUI();
+            renderCustomerDashboard();
+            showToast('隆Correo verificado y cuenta creada!', '鉁�');
+        }
+
+        function renderCustomerDashboard() {
+            if (!currentCustomer) return;
+            document.getElementById('cust-guest-panel').classList.add('hidden');
+            document.getElementById('cust-logged-panel').classList.remove('hidden');
+
+            document.getElementById('cust-profile-name').innerText = `${currentCustomer.name} ${currentCustomer.verified ? '鉁�' : ''}`;
+            document.getElementById('cust-profile-email').innerText = `${currentCustomer.email} | Tel: ${currentCustomer.phone || 'N/A'}`;
+
+            const myOrders = dbOrders.filter(o => o.customerEmail === currentCustomer.email);
+
+            const unlockedStatuses = ['Pago Confirmado', 'En Fabricaci贸n', 'Enviado con Gu铆a', 'Entregado'];
+            const stlItems = [];
+            myOrders.forEach(ord => {
+                if (unlockedStatuses.includes(ord.status)) {
+                    (ord.items || []).forEach(it => {
+                        if (it.type === 'stl') {
+                            const latestProd = dbProducts.find(p => p.id === it.prodId);
+                            const dlUrl = (latestProd && latestProd.stlDownloadUrl) || it.stlDownloadUrl;
+                            stlItems.push({ orderId: ord.id, name: it.name, url: dlUrl });
+                        }
+                    });
+                }
+            });
+
+            const dlContainer = document.getElementById('cust-downloads-list');
+            if (stlItems.length === 0) {
+                dlContainer.innerHTML = `<p class="text-[11px] text-gray-400 bg-darkInput p-3 rounded-xl">Tus archivos STL aparecer谩n aqu铆 en cuanto se acredite tu pago.</p>`;
+            } else {
+                dlContainer.innerHTML = stlItems.map(d => `
+                    <div class="p-3 rounded-xl bg-cyan-950/40 border border-neonCyan/40 flex items-center justify-between gap-2">
+                        <div>
+                            <p class="font-bold text-white">${d.name}</p>
+                            <p class="text-[10px] text-gray-400">Orden ${d.orderId}</p>
+                        </div>
+                        ${d.url
+                            ? `<a href="${d.url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-neonCyan text-darkBg font-extrabold text-[11px]">馃摜 Descargar</a>`
+                            : `<span class="text-[10px] text-amber-300">Enlace pendiente</span>`}
+                    </div>
+                `).join('');
+            }
+
+            const ordersContainer = document.getElementById('cust-orders-list');
+            if (myOrders.length === 0) {
+                ordersContainer.innerHTML = `<p class="text-[11px] text-gray-400 bg-darkInput p-3 rounded-xl">A煤n no tienes pedidos registrados con este correo.</p>`;
+            } else {
+                const stepsOrder = ['Pago Pendiente', 'Pago Confirmado', 'En Fabricaci贸n', 'Enviado con Gu铆a', 'Entregado'];
+                ordersContainer.innerHTML = myOrders.map(o => {
+                    const stepIdx = Math.max(0, stepsOrder.indexOf(o.status));
+                    const progressPct = Math.round(((stepIdx + 1) / stepsOrder.length) * 100);
+                    return `
+                    <div onclick="openCustomerOrderDetail('${o.id}')" class="p-3.5 rounded-2xl bg-darkInput border border-gray-800 hover:border-neonCyan/60 cursor-pointer transition space-y-2 group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono font-bold text-xs text-neonCyan">${o.id}</span>
+                                <span class="text-[10px] text-gray-400">${o.date}</span>
+                            </div>
+                            <span class="px-2.5 py-0.5 rounded-full bg-purple-950 border border-neonPurple/40 text-purple-200 text-[10px] font-bold">${o.status}</span>
+                        </div>
+                        <p class="text-[11px] text-gray-300 truncate">${o.items.map(i => `${i.name} (${i.optionLabel})`).join(', ')}</p>
+                        <div class="w-full h-1.5 bg-darkBg rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-neonPurple to-neonCyan rounded-full transition-all" style="width: ${progressPct}%"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-[10px]">
+                            <span class="text-gray-400">Total: <strong class="text-white">${o.totalFormatted}</strong></span>
+                            <span class="text-neonCyan font-bold group-hover:underline">Ver detalle y proceso 鈫�</span>
+                        </div>
+                    </div>
+                `;
+                }).join('');
+            }
+        }
+
+        function openCustomerOrderDetail(orderId) {
+            const ord = dbOrders.find(o => o.id === orderId);
+            if (!ord) return;
+
+            document.getElementById('cod-order-id').innerText = `${ord.id} 鈥� ${ord.date}`;
+
+            const processSteps = ord.hasPhysical
+                ? [
+                    { key: 'Pago Pendiente', title: '1. Orden Registrada', desc: 'En espera de confirmaci贸n de dep贸sito PayPal.' },
+                    { key: 'Pago Confirmado', title: '2. Pago Acreditado', desc: 'Tu pago fue validado y tu pedido entra a cola de taller.' },
+                    { key: 'En Fabricaci贸n', title: '3. En Producci贸n / Preparaci贸n', desc: 'Impresi贸n 3D, detallado o confecci贸n de tus piezas.' },
+                    { key: 'Enviado con Gu铆a', title: '4. Enviado por Paqueter铆a', desc: 'Paquete recolectado por FedEx/DHL v铆a Skydropx.' },
+                    { key: 'Entregado', title: '5. Entregado en Domicilio', desc: 'Pedido recibido con 茅xito.' }
+                ]
+                : [
+                    { key: 'Pago Pendiente', title: '1. Orden Digital Registrada', desc: 'En espera de confirmaci贸n de pago en PayPal.' },
+                    { key: 'Pago Confirmado', title: '2. Pago Acreditado y Archivos STL Liberados', desc: 'Tus enlaces privados ya est谩n listos para descargar.' }
+                ];
+
+            const fullFlow = ['Pago Pendiente', 'Pago Confirmado', 'En Fabricaci贸n', 'Enviado con Gu铆a', 'Entregado'];
+            const currentGlobalIdx = Math.max(0, fullFlow.indexOf(ord.status));
+
+            document.getElementById('cod-progress-container').innerHTML = `
+                <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-bold text-white">Progreso del Pedido</span>
+                    <span class="text-[11px] font-bold text-neonCyan">${ord.status}</span>
+                </div>
+                <div class="space-y-2.5">
+                    ${processSteps.map(st => {
+                        const stGlobalIdx = fullFlow.indexOf(st.key);
+                        const isDone = stGlobalIdx <= currentGlobalIdx;
+                        const isCurrent = stGlobalIdx === currentGlobalIdx || (!ord.hasPhysical && st.key === 'Pago Confirmado' && currentGlobalIdx >= 1);
+                        return `
+                            <div class="flex items-start gap-3">
+                                <div class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5 ${isDone ? 'bg-neonCyan text-darkBg' : 'bg-darkBg border border-gray-700 text-gray-500'}">
+                                    ${isDone ? '鉁�' : '鈥�'}
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs font-bold ${isCurrent ? 'text-neonCyan' : (isDone ? 'text-white' : 'text-gray-500')}">${st.title}</p>
+                                    <p class="text-[11px] ${isDone ? 'text-gray-300' : 'text-gray-500'}">${st.desc}</p>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+
+            const shipBox = document.getElementById('cod-shipping-box');
+            if (ord.hasPhysical) {
+                shipBox.innerHTML = `
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-gray-800">
+                        <span class="font-bold text-white">馃殮 Paqueter铆a: <span class="text-neonCyan">${ord.carrier}</span></span>
+                        ${ord.trackingNumber
+                            ? `<button type="button" onclick="copyOrderTracking('${ord.trackingNumber}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 font-mono text-[11px] hover:bg-emerald-900/70">馃搵 Gu铆a: ${ord.trackingNumber}</button>`
+                            : `<span class="text-[11px] text-amber-300">Gu铆a pendiente de asignaci贸n</span>`}
+                    </div>
+                    <p class="text-[11px] text-gray-300"><strong>Destinatario:</strong> ${ord.customerName} (${ord.customerPhone})</p>
+                    <p class="text-[11px] text-gray-400"><strong>Direcci贸n:</strong> ${ord.street}, Col. ${ord.colony}, CP ${ord.zip}, ${ord.city}, ${ord.state}${ord.refs ? ` 鈥� Ref: ${ord.refs}` : ''}</p>
+                `;
+            } else {
+                shipBox.innerHTML = `
+                    <p class="font-bold text-neonCyan">馃 Entrega 100% Digital (Archivos 3D STL)</p>
+                    <p class="text-[11px] text-gray-300">No requiere env铆o f铆sico. Al acreditarse tu pago se activan tus enlaces de descarga directa.</p>
+                `;
+            }
+
+            const unlockedStatuses = ['Pago Confirmado', 'En Fabricaci贸n', 'Enviado con Gu铆a', 'Entregado'];
+            const isUnlocked = unlockedStatuses.includes(ord.status);
+
+            document.getElementById('cod-items-list').innerHTML = (ord.items || []).map(it => {
+                const latestProd = dbProducts.find(p => p.id === it.prodId);
+                const dlUrl = (latestProd && latestProd.stlDownloadUrl) || it.stlDownloadUrl;
+                return `
+                    <div class="p-3 rounded-xl bg-darkInput border border-gray-800 flex items-center justify-between gap-2 text-xs">
+                        <div>
+                            <p class="font-bold text-white">${it.name}</p>
+                            <p class="text-[11px] text-gray-400">${it.optionLabel} 脳 ${it.qty}</p>
+                        </div>
+                        ${it.type === 'stl' && isUnlocked && dlUrl
+                            ? `<a href="${dlUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-neonCyan text-darkBg font-extrabold text-[11px] shrink-0">馃摜 Descargar STL</a>`
+                            : `<span class="font-bold text-gray-200 shrink-0">${formatMoney(it.priceMXN * it.qty, it.priceUSD * it.qty)}</span>`}
+                    </div>
+                `;
+            }).join('');
+
+            const pendingBox = document.getElementById('cod-pending-pay-box');
+            if (ord.status === 'Pago Pendiente') {
+                pendingBox.classList.remove('hidden');
+                document.getElementById('cod-paypal-acc').innerText = dbSettings.paypalAccount || 'vio2015@outlook.com';
+                document.getElementById('cod-paypal-folio').innerText = ord.id;
+                document.getElementById('cod-paypal-link').href = dbSettings.paypalLink || 'https://www.paypal.com';
+            } else {
+                pendingBox.classList.add('hidden');
+            }
+
+            document.getElementById('customer-order-detail-modal').classList.remove('hidden');
+        }
+
+        function closeCustomerOrderDetailModal() {
+            document.getElementById('customer-order-detail-modal').classList.add('hidden');
+        }
+
+        function copyOrderTracking(trackingCode) {
+            const ta = document.createElement('textarea');
+            ta.value = trackingCode;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast(`N煤mero de gu铆a ${trackingCode} copiado`, '馃搵');
+        }
+
+        async function customerLogout() {
+            if (isFirebaseConfigured && fbAuth) await signOut(fbAuth);
+            currentCustomer = null;
+            sessionStorage.removeItem('vt_customer_session');
+            updateAdminStateUI();
+            closeUserAuthModal();
+            showToast('Sesi贸n cerrada', '馃憢');
+        }
+
+        async function adminLogout() {
+            if (isFirebaseConfigured && fbAuth) await signOut(fbAuth);
+            isAdminLoggedIn = false;
+            sessionStorage.removeItem('vt_admin_session');
+            updateAdminStateUI();
+            closeAdminModal();
+            showToast('Sesi贸n de Administrador cerrada', '馃敀');
+        }
+
+        // SIZE GUIDE MODAL
+        function openSizeGuideModal(tab = 'suits') {
+            document.getElementById('size-guide-modal').classList.remove('hidden');
+            switchSizeGuideTab(tab);
+        }
+
+        function closeSizeGuideModal() {
+            document.getElementById('size-guide-modal').classList.add('hidden');
+        }
+
+        function switchSizeGuideTab(tab) {
+            if (tab === 'suits') {
+                document.getElementById('sg-content-suits').classList.remove('hidden');
+                document.getElementById('sg-content-heads').classList.add('hidden');
+                document.getElementById('sg-tab-suits').className = 'py-2 rounded-lg bg-neonPurple text-white transition';
+                document.getElementById('sg-tab-heads').className = 'py-2 rounded-lg text-gray-400 hover:text-white transition';
+            } else {
+                document.getElementById('sg-content-heads').classList.remove('hidden');
+                document.getElementById('sg-content-suits').classList.add('hidden');
+                document.getElementById('sg-tab-heads').className = 'py-2 rounded-lg bg-neonPurple text-white transition';
+                document.getElementById('sg-tab-suits').className = 'py-2 rounded-lg text-gray-400 hover:text-white transition';
+            }
+        }
+
+        // ADMIN MODAL & TABS
+        function openAdminModal() {
+            if (!isAdminLoggedIn) {
+                handleUserIconClick();
+                return;
+            }
+            document.getElementById('admin-modal').classList.remove('hidden');
+            switchAdminTab('products');
+            renderAdminLists();
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        function switchAdminTab(tab) {
+            const tabs = ['products', 'orders', 'users', 'images', 'ig', 'faq', 'comms', 'security'];
+            tabs.forEach(t => {
+                const content = document.getElementById(`adm-tab-content-${t}`);
+                const btn = document.getElementById(`adm-tab-btn-${t}`);
+                if (content) {
+                    if (t === tab) content.classList.remove('hidden');
+                    else content.classList.add('hidden');
+                }
+                if (btn) {
+                    btn.className = t === tab
+                        ? 'adm-tab-btn px-3.5 py-2 rounded-xl bg-neonPurple text-white'
+                        : 'adm-tab-btn px-3.5 py-2 rounded-xl bg-darkCard text-gray-300 hover:text-white';
+                }
+            });
+            renderAdminLists();
+        }
+
+        function renderAdminLists() {
+            document.getElementById('adm-orders-count').innerText = dbOrders.length;
+            document.getElementById('adm-users-count').innerText = dbUsers.length;
+
+            const prodList = document.getElementById('adm-products-list');
+            if (prodList) {
+                prodList.innerHTML = dbProducts.map(p => {
+                    const imgsCount = getProductImagesList(p).length;
+                    return `
+                    <div class="p-3.5 rounded-2xl bg-darkCard border ${p.outOfStock ? 'border-red-500/40' : 'border-gray-800'} flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                            <p class="text-xs font-bold text-white">
+                                ${p.name}
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-purple-950 text-purple-200 uppercase">${p.type}</span>
+                                ${imgsCount > 1 ? `<span class="text-[10px] px-2 py-0.5 rounded bg-cyan-950 text-neonCyan ml-1">馃柤锔� ${imgsCount} fotos</span>` : ''}
+                                ${p.outOfStock ? '<span class="text-[10px] px-2 py-0.5 rounded bg-red-950 border border-red-500/50 text-red-300 font-extrabold ml-1">馃毇 AGOTADO</span>' : ''}
+                            </p>
+                            <p class="text-[11px] text-neonCyan">$${p.priceMXN} MXN / $${p.priceUSD} USD ${p.sizes && p.sizes.length ? `| Tallas: ${p.sizes.join(', ')}` : ''}</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button type="button" onclick="toggleProductStock('${p.id}')" class="px-3 py-1.5 rounded-lg ${p.outOfStock ? 'bg-emerald-950/70 text-emerald-300 hover:bg-emerald-900/70' : 'bg-amber-950/70 text-amber-300 hover:bg-amber-900/70'} text-xs font-semibold">
+                                ${p.outOfStock ? '鉁� Activar Stock' : '馃毇 Agotar'}
+                            </button>
+                            <button type="button" onclick="editAdminProduct('${p.id}')" class="px-3 py-1.5 rounded-lg bg-darkInput hover:bg-purple-900/50 text-xs text-purple-200 font-semibold">鉁忥笍 Editar</button>
+                            <button type="button" onclick="deleteAdminProduct('${p.id}')" class="px-3 py-1.5 rounded-lg bg-darkInput hover:bg-red-900/50 text-xs text-red-400 font-semibold">馃棏锔�</button>
+                        </div>
+                    </div>
+                `;
+                }).join('');
+            }
+
+            const ordList = document.getElementById('adm-orders-list');
+            if (ordList) {
+                if (dbOrders.length === 0) {
+                    ordList.innerHTML = `<p class="text-xs text-gray-400 bg-darkCard p-5 rounded-2xl">A煤n no hay pedidos registrados.</p>`;
+                } else {
+                    const statuses = ['Pago Pendiente', 'Pago Confirmado', 'En Fabricaci贸n', 'Enviado con Gu铆a', 'Entregado'];
+                    ordList.innerHTML = dbOrders.map((o, idx) => `
+                        <div class="p-4 rounded-2xl bg-darkCard border border-gray-800 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <span class="font-mono font-bold text-sm text-neonCyan">${o.id}</span>
+                                    <span class="text-xs text-gray-400 ml-2">${o.date} 鈥� <strong class="text-white">${o.customerName}</strong> (${o.customerEmail} | ${o.customerPhone})</span>
+                                </div>
+                                <span class="font-heading font-bold text-xs text-emerald-400">${o.totalFormatted}</span>
+                            </div>
+                            <p class="text-xs text-gray-300">Art铆culos: ${o.items.map(i => `${i.name} [${i.optionLabel} x${i.qty}]`).join(', ')}</p>
+                            ${o.hasPhysical
+                                ? `<p class="text-[11px] text-gray-400">馃搷 ${o.street}, Col. ${o.colony}, CP ${o.zip}, ${o.city}, ${o.state} (${o.carrier})</p>`
+                                : `<p class="text-[11px] text-neonCyan">馃 Pedido 100% Digital (Sin env铆o f铆sico)</p>`}
+                            <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-gray-800">
+                                <select id="ord-status-${idx}" class="bg-darkInput border border-gray-700 rounded-xl px-3 py-1.5 text-xs text-white">
+                                    ${statuses.map(st => `<option value="${st}" ${o.status === st ? 'selected' : ''}>${st}</option>`).join('')}
+                                </select>
+                                <input type="text" id="ord-track-${idx}" value="${o.trackingNumber || ''}" placeholder="N煤mero de Gu铆a FedEx/DHL" class="bg-darkInput border border-gray-700 rounded-xl px-3 py-1.5 text-xs text-white flex-1 min-w-[180px]">
+                                <button type="button" onclick="updateOrderStatusAndNotify(${idx})" class="px-4 py-1.5 rounded-xl bg-neonPurple hover:bg-purple-600 text-white font-bold text-xs transition">
+                                    鉁夛笍 Actualizar y Notificar
+                                </button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            const usrList = document.getElementById('adm-users-list');
+            if (usrList) {
+                if (dbUsers.length === 0) {
+                    usrList.innerHTML = `<p class="text-xs text-gray-400 bg-darkCard p-5 rounded-2xl col-span-2">A煤n no hay usuarios registrados.</p>`;
+                } else {
+                    usrList.innerHTML = dbUsers.map((u, idx) => {
+                        const ordCount = dbOrders.filter(o => o.customerEmail === u.email).length;
+                        return `
+                            <div class="p-4 rounded-2xl bg-darkCard border border-gray-800 flex items-center justify-between gap-3">
+                                <div class="space-y-1">
+                                    <p class="text-xs font-bold text-white">${u.name} ${u.verified ? '<span class="text-emerald-400 text-[10px]">鉁� Verificado</span>' : '<span class="text-amber-400 text-[10px]">Pendiente</span>'}</p>
+                                    <p class="text-[11px] text-neonCyan">${u.email}</p>
+                                    <p class="text-[11px] text-gray-400">Tel: ${u.phone || 'N/A'} | Pedidos: ${ordCount}</p>
+                                </div>
+                                <button type="button" onclick="deleteRegisteredUser(${idx})" class="p-2 rounded-lg bg-darkInput text-red-400 hover:text-red-300 text-xs">馃棏锔�</button>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            }
+
+            document.getElementById('set-logo-url').value = dbSettings.logoUrl || '';
+            document.getElementById('set-guide-suits').value = dbSettings.guideSuitsUrl || '';
+            document.getElementById('set-guide-heads').value = dbSettings.guideHeadsUrl || '';
+
+            const admSuitsSizes = document.getElementById('adm-suits-sizes-list');
+            if (admSuitsSizes) {
+                admSuitsSizes.innerHTML = (dbSettings.suitSizeRows || []).map((r, idx) => `
+                    <div class="p-2 rounded-lg bg-darkInput border border-gray-800 flex items-center justify-between text-[11px]">
+                        <span class="text-gray-200"><strong class="text-neonCyan">${r.size}</strong>: ${r.height} | Pecho ${r.chest}</span>
+                        <button type="button" onclick="deleteSizeGuideRow('suits', ${idx})" class="text-red-400 hover:text-red-300 font-bold px-1.5">鉁�</button>
+                    </div>
+                `).join('');
+            }
+            const admHeadsSizes = document.getElementById('adm-heads-sizes-list');
+            if (admHeadsSizes) {
+                admHeadsSizes.innerHTML = (dbSettings.headSizeRows || []).map((r, idx) => `
+                    <div class="p-2 rounded-lg bg-darkInput border border-gray-800 flex items-center justify-between text-[11px]">
+                        <span class="text-gray-200"><strong class="text-neonCyan">${r.size}</strong>: Circ. ${r.circ} | Alt. ${r.height}</span>
+                        <button type="button" onclick="deleteSizeGuideRow('heads', ${idx})" class="text-red-400 hover:text-red-300 font-bold px-1.5">鉁�</button>
+                    </div>
+                `).join('');
+            }
+
+            const igList = document.getElementById('adm-ig-list');
+            if (igList) {
+                igList.innerHTML = dbIgPosts.map((post, idx) => `
+                    <div class="p-3.5 rounded-2xl bg-darkCard border border-gray-800 flex items-center justify-between gap-3">
+                        <p class="text-xs text-gray-200">${post.caption}</p>
+                        <button type="button" onclick="deleteAdminIgPost(${idx})" class="px-3 py-1.5 rounded-lg bg-darkInput text-red-400 text-xs">馃棏锔�</button>
+                    </div>
+                `).join('');
+            }
+
+            const faqList = document.getElementById('adm-faq-list');
+            if (faqList) {
+                faqList.innerHTML = dbFaqs.map(f => `
+                    <div class="p-3.5 rounded-2xl bg-darkCard border border-gray-800 flex items-start justify-between gap-3">
+                        <div>
+                            <p class="text-xs font-bold text-white">${f.question}</p>
+                            <p class="text-[11px] text-gray-400 mt-1">${f.answer}</p>
+                        </div>
+                        <div class="flex gap-1.5 shrink-0">
+                            <button type="button" onclick="editAdminFaq('${f.id}')" class="px-2.5 py-1 rounded-lg bg-darkInput text-purple-200 text-xs">鉁忥笍</button>
+                            <button type="button" onclick="deleteAdminFaq('${f.id}')" class="px-2.5 py-1 rounded-lg bg-darkInput text-red-400 text-xs">馃棏锔�</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            document.getElementById('set-paypal-account').value = dbSettings.paypalAccount || 'vio2015@outlook.com';
+            document.getElementById('set-paypal-link').value = dbSettings.paypalLink || 'https://www.paypal.com';
+            document.getElementById('set-paypal-notes').value = dbSettings.paypalNotes || '';
+            document.getElementById('set-fedex-mxn').value = dbSettings.fedexCostMXN ?? 160;
+            document.getElementById('set-fedex-usd').value = dbSettings.fedexCostUSD ?? 8;
+            document.getElementById('set-dhl-mxn').value = dbSettings.dhlCostMXN ?? 210;
+            document.getElementById('set-dhl-usd').value = dbSettings.dhlCostUSD ?? 11;
+            document.getElementById('set-email-subject').value = dbSettings.emailSubject || '';
+            document.getElementById('set-email-body').value = dbSettings.emailBody || '';
+        }
+
+        function toggleAdminProductTypeFields() {
+            const typeVal = document.getElementById('adm-prod-type').value;
+            const stlWrapper = document.getElementById('adm-stl-link-wrapper');
+            const sizesWrapper = document.getElementById('adm-sizes-wrapper');
+            if (stlWrapper) {
+                if (typeVal === 'stl') stlWrapper.classList.remove('hidden');
+                else stlWrapper.classList.add('hidden');
+            }
+            if (sizesWrapper) {
+                if (typeVal === 'faceshell' || typeVal === 'traje') sizesWrapper.classList.remove('hidden');
+                else sizesWrapper.classList.add('hidden');
+            }
+        }
+
+        async function saveAdminProduct(e) {
+            e.preventDefault();
+            const id = document.getElementById('adm-prod-id').value;
+            const prodType = document.getElementById('adm-prod-type').value;
+            const rawSizes = document.getElementById('adm-prod-sizes').value || 'CH, M, G';
+            const parsedSizes = rawSizes.split(',').map(s => s.trim()).filter(Boolean);
+            const rawImgs = document.getElementById('adm-prod-imgs').value || '';
+            const parsedImgs = rawImgs.split(/\r?\n/).map(u => u.trim()).filter(Boolean);
+
+            const prodData = {
+                id: id || 'p' + Date.now(),
+                name: document.getElementById('adm-prod-name').value.trim(),
+                type: prodType,
+                sizes: (prodType === 'faceshell' || prodType === 'traje') ? (parsedSizes.length ? parsedSizes : ['CH', 'M', 'G']) : [],
+                priceMXN: Number(document.getElementById('adm-prod-mxn').value),
+                priceUSD: Number(document.getElementById('adm-prod-usd').value),
+                badge: document.getElementById('adm-prod-badge').value.trim(),
+                outOfStock: document.getElementById('adm-prod-out-of-stock').checked,
+                imageUrl: parsedImgs[0] || '',
+                images: parsedImgs,
+                stlDownloadUrl: prodType === 'stl' ? document.getElementById('adm-prod-stl-url').value.trim() : '',
+                description: document.getElementById('adm-prod-desc').value.trim()
+            };
+
+            if (id) {
+                const idx = dbProducts.findIndex(p => p.id === id);
+                if (idx > -1) dbProducts[idx] = prodData;
+            } else {
+                dbProducts.unshift(prodData);
+            }
+
+            await saveDbState();
+            resetAdminProductForm();
+            renderAdminLists();
+            showToast('Art铆culo guardado en el cat谩logo', '鉁�');
+        }
+
+        async function toggleProductStock(id) {
+            const p = dbProducts.find(item => item.id === id);
+            if (!p) return;
+            p.outOfStock = !p.outOfStock;
+            await saveDbState();
+            renderAdminLists();
+            showToast(p.outOfStock ? `"${p.name}" marcado como Agotado` : `"${p.name}" disponible nuevamente`, p.outOfStock ? '馃毇' : '鉁�');
+        }
+
+        function renderAdminImgPreviews() {
+            const box = document.getElementById('adm-prod-imgs-preview');
+            const raw = document.getElementById('adm-prod-imgs')?.value || '';
+            if (!box) return;
+            const urls = raw.split(/\r?\n/).map(u => u.trim()).filter(Boolean);
+            box.innerHTML = urls.map((u, idx) => `
+                <div class="relative w-12 h-12 rounded-lg overflow-hidden border border-purple-500/40 bg-darkInput">
+                    <img src="${u}" alt="Foto ${idx + 1}" class="w-full h-full object-cover">
+                    <span class="absolute bottom-0 right-0 bg-black/80 text-[9px] text-neonCyan px-1 font-mono">${idx + 1}</span>
+                </div>
+            `).join('');
+        }
+
+        function editAdminProduct(id) {
+            const p = dbProducts.find(item => item.id === id);
+            if (!p) return;
+            document.getElementById('adm-form-title').innerText = '鉁忥笍 Editando Art铆culo';
+            document.getElementById('adm-prod-id').value = p.id;
+            document.getElementById('adm-prod-name').value = p.name;
+            document.getElementById('adm-prod-type').value = p.type;
+            toggleAdminProductTypeFields();
+            document.getElementById('adm-prod-sizes').value = (Array.isArray(p.sizes) && p.sizes.length) ? p.sizes.join(', ') : 'CH, M, G';
+            document.getElementById('adm-prod-stl-url').value = p.stlDownloadUrl || '';
+            document.getElementById('adm-prod-mxn').value = p.priceMXN;
+            document.getElementById('adm-prod-usd').value = p.priceUSD;
+            document.getElementById('adm-prod-badge').value = p.badge;
+            document.getElementById('adm-prod-out-of-stock').checked = Boolean(p.outOfStock);
+            document.getElementById('adm-prod-imgs').value = getProductImagesList(p).join('\n');
+            renderAdminImgPreviews();
+            document.getElementById('adm-prod-desc').value = p.description;
+        }
+
+        async function deleteAdminProduct(id) {
+            dbProducts = dbProducts.filter(p => p.id !== id);
+            await saveDbState();
+            renderAdminLists();
+            showToast('Art铆culo eliminado', '馃棏锔�');
+        }
+
+        function resetAdminProductForm() {
+            document.getElementById('adm-form-title').innerText = '鉃� Agregar Nuevo Producto';
+            document.getElementById('adm-prod-id').value = '';
+            document.getElementById('admin-product-form').reset();
+            document.getElementById('adm-prod-out-of-stock').checked = false;
+            document.getElementById('adm-prod-sizes').value = 'CH, M, G';
+            document.getElementById('adm-prod-imgs').value = '';
+            renderAdminImgPreviews();
+            toggleAdminProductTypeFields();
+        }
+
+        async function addSizeGuideRow(e, tableType) {
+            e.preventDefault();
+            if (tableType === 'suits') {
+                dbSettings.suitSizeRows.push({
+                    size: document.getElementById('new-suit-size').value.trim(),
+                    height: document.getElementById('new-suit-height').value.trim(),
+                    chest: document.getElementById('new-suit-chest').value.trim(),
+                    waist: document.getElementById('new-suit-waist').value.trim(),
+                    hip: document.getElementById('new-suit-hip').value.trim()
+                });
+            } else {
+                dbSettings.headSizeRows.push({
+                    size: document.getElementById('new-head-size').value.trim(),
+                    circ: document.getElementById('new-head-circ').value.trim(),
+                    height: document.getElementById('new-head-height').value.trim()
+                });
+            }
+            e.target.reset();
+            await saveDbState();
+            renderAdminLists();
+            showToast('Talla agregada a la Gu铆a de Medidas', '馃搹');
+        }
+
+        async function deleteSizeGuideRow(tableType, idx) {
+            if (tableType === 'suits') {
+                dbSettings.suitSizeRows.splice(idx, 1);
+            } else {
+                dbSettings.headSizeRows.splice(idx, 1);
+            }
+            await saveDbState();
+            renderAdminLists();
+            showToast('Fila de talla eliminada', '馃棏锔�');
+        }
+
+        async function saveBrandSettings(e) {
+            e.preventDefault();
+            dbSettings.logoUrl = document.getElementById('set-logo-url').value.trim();
+            dbSettings.guideSuitsUrl = document.getElementById('set-guide-suits').value.trim();
+            dbSettings.guideHeadsUrl = document.getElementById('set-guide-heads').value.trim();
+            await saveDbState();
+            showToast('Configuraci贸n visual guardada', '馃帹');
+        }
+
+        async function saveCommsAndPaypalSettings(e) {
+            e.preventDefault();
+            dbSettings.paypalAccount = document.getElementById('set-paypal-account').value.trim();
+            dbSettings.paypalLink = document.getElementById('set-paypal-link').value.trim();
+            dbSettings.paypalNotes = document.getElementById('set-paypal-notes').value.trim();
+            dbSettings.fedexCostMXN = Number(document.getElementById('set-fedex-mxn').value);
+            dbSettings.fedexCostUSD = Number(document.getElementById('set-fedex-usd').value);
+            dbSettings.dhlCostMXN = Number(document.getElementById('set-dhl-mxn').value);
+            dbSettings.dhlCostUSD = Number(document.getElementById('set-dhl-usd').value);
+            dbSettings.emailSubject = document.getElementById('set-email-subject').value.trim();
+            dbSettings.emailBody = document.getElementById('set-email-body').value;
+            await saveDbState();
+            showToast('Tarifas de env铆o, PayPal y plantilla guardados', '鉁�');
+        }
+
+        async function updateOrderStatusAndNotify(idx) {
+            const ord = dbOrders[idx];
+            if (!ord) return;
+            const newStatus = document.getElementById(`ord-status-${idx}`).value;
+            const newTrack = document.getElementById(`ord-track-${idx}`).value.trim();
+            ord.status = newStatus;
+            ord.trackingNumber = newTrack;
+            await saveDbState();
+
+            let downloadsText = '';
+            const unlockedStatuses = ['Pago Confirmado', 'En Fabricaci贸n', 'Enviado con Gu铆a', 'Entregado'];
+            if (unlockedStatuses.includes(newStatus)) {
+                const links = [];
+                (ord.items || []).forEach(it => {
+                    if (it.type === 'stl') {
+                        const prod = dbProducts.find(p => p.id === it.prodId);
+                        const url = (prod && prod.stlDownloadUrl) || it.stlDownloadUrl;
+                        if (url) links.push(`- ${it.name}: ${url}`);
+                    }
+                });
+                if (links.length > 0) {
+                    downloadsText = `\nEnlaces de descarga 3D STL:\n${links.join('\n')}\n`;
+                }
+            }
+
+            const subject = (dbSettings.emailSubject || '')
+                .replace(/{pedido}/g, ord.id)
+                .replace(/{cliente}/g, ord.customerName)
+                .replace(/{estatus}/g, newStatus);
+
+            const body = (dbSettings.emailBody || '')
+                .replace(/{cliente}/g, ord.customerName)
+                .replace(/{pedido}/g, ord.id)
+                .replace(/{estatus}/g, newStatus)
+                .replace(/{paqueteria}/g, ord.carrier)
+                .replace(/{guia}/g, newTrack || 'Pendiente de asignaci贸n')
+                .replace(/{descargas}/g, downloadsText);
+
+            const mailtoUrl = `mailto:${encodeURIComponent(ord.customerEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(mailtoUrl, '_blank');
+            showToast(`Estatus actualizado y correo preparado para ${ord.customerEmail}`, '鉁夛笍');
+        }
+
+        function exportSkydropxCSV() {
+            const physicalOrders = dbOrders.filter(o => o.hasPhysical);
+            if (physicalOrders.length === 0) {
+                showToast('No hay pedidos f铆sicos pendientes para exportar', '鈿狅笍');
+                return;
+            }
+            const headers = ['Folio', 'Destinatario', 'Correo', 'Telefono', 'Calle_y_Numero', 'Colonia', 'Codigo_Postal', 'Municipio', 'Estado', 'Referencias', 'Paqueteria', 'Contenido'];
+            const rows = physicalOrders.map(o => [
+                o.id,
+                o.customerName,
+                o.customerEmail,
+                o.customerPhone,
+                o.street,
+                o.colony,
+                o.zip,
+                o.city,
+                o.state,
+                o.refs,
+                o.carrier,
+                o.items.map(i => `${i.name} (${i.optionLabel} x${i.qty})`).join(' | ')
+            ].map(val => `"${String(val || '').replace(/"/g, '""')}"`).join(','));
+
+            const csvContent = '\uFEFF' + [headers.join(','), ...rows].join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `Skydropx_Envios_VIOTECNO_${new Date().toISOString().slice(0, 10)}.csv`;
+            link.click();
+            showToast('Archivo CSV para Skydropx descargado', '馃摜');
+        }
+
+        function copyUsersContactList() {
+            if (dbUsers.length === 0) {
+                showToast('No hay usuarios registrados para copiar', '鈿狅笍');
+                return;
+            }
+            const text = dbUsers.map(u => `${u.name} | ${u.email} | ${u.phone || 'Sin tel茅fono'}`).join('\n');
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast('Directorio copiado al portapapeles', '馃搵');
+        }
+
+        async function deleteRegisteredUser(idx) {
+            dbUsers.splice(idx, 1);
+            await saveDbState();
+            renderAdminLists();
+            showToast('Usuario eliminado del directorio', '馃棏锔�');
+        }
+
+        async function addAdminIgPost(e) {
+            e.preventDefault();
+            dbIgPosts.unshift({
+                id: 'ig' + Date.now(),
+                caption: document.getElementById('adm-ig-caption').value.trim(),
+                link: document.getElementById('adm-ig-link').value.trim(),
+                imageUrl: document.getElementById('adm-ig-img').value.trim()
+            });
+            e.target.reset();
+            await saveDbState();
+            renderAdminLists();
+            showToast('Publicaci贸n agregada a la galer铆a', '馃摳');
+        }
+
+        async function deleteAdminIgPost(idx) {
+            dbIgPosts.splice(idx, 1);
+            await saveDbState();
+            renderAdminLists();
+            showToast('Publicaci贸n eliminada', '馃棏锔�');
+        }
+
+        async function saveAdminFaq(e) {
+            e.preventDefault();
+            const id = document.getElementById('adm-faq-id').value;
+            const faqObj = {
+                id: id || 'f' + Date.now(),
+                question: document.getElementById('adm-faq-question').value.trim(),
+                answer: document.getElementById('adm-faq-answer').value.trim()
+            };
+            if (id) {
+                const idx = dbFaqs.findIndex(f => f.id === id);
+                if (idx > -1) dbFaqs[idx] = faqObj;
+            } else {
+                dbFaqs.push(faqObj);
+            }
+            await saveDbState();
+            resetAdminFaqForm();
+            renderAdminLists();
+            showToast('Pregunta frecuente guardada', '鉁�');
+        }
+
+        function editAdminFaq(id) {
+            const f = dbFaqs.find(item => item.id === id);
+            if (!f) return;
+            document.getElementById('adm-faq-form-title').innerText = '鉁忥笍 Editando Pregunta';
+            document.getElementById('adm-faq-id').value = f.id;
+            document.getElementById('adm-faq-question').value = f.question;
+            document.getElementById('adm-faq-answer').value = f.answer;
+        }
+
+        async function deleteAdminFaq(id) {
+            dbFaqs = dbFaqs.filter(f => f.id !== id);
+            await saveDbState();
+            renderAdminLists();
+            showToast('Pregunta eliminada', '馃棏锔�');
+        }
+
+        function resetAdminFaqForm() {
+            document.getElementById('adm-faq-form-title').innerText = '鉃� Nueva Pregunta Frecuente';
+            document.getElementById('adm-faq-id').value = '';
+            document.getElementById('adm-faq-question').value = '';
+            document.getElementById('adm-faq-answer').value = '';
+        }
+
+        async function handleAdminPasswordChange(e) {
+            e.preventDefault();
+            const curr = document.getElementById('adm-curr-pass').value;
+            const next = document.getElementById('adm-new-pass').value;
+            const conf = document.getElementById('adm-confirm-pass').value;
+
+            if (next !== conf) {
+                showToast('Las nuevas contrase帽as no coinciden', '鈿狅笍');
+                return;
+            }
+
+            if (isFirebaseConfigured && fbAuth && fbAuth.currentUser) {
+                try {
+                    const credential = EmailAuthProvider.credential(fbAuth.currentUser.email, curr);
+                    await reauthenticateWithCredential(fbAuth.currentUser, credential);
+                    await updatePassword(fbAuth.currentUser, next);
+                    adminPassword = next;
+                    localStorage.setItem('vt_admin_password', next);
+                    e.target.reset();
+                    showToast('Contrase帽a actualizada en Firebase', '馃攼');
+                    return;
+                } catch (err) {
+                    showToast('No se pudo actualizar: ' + err.message, '鈿狅笍');
+                    return;
+                }
+            }
+
+            if (curr !== adminPassword) {
+                showToast('La contrase帽a actual es incorrecta', '鈿狅笍');
+                return;
+            }
+
+            adminPassword = next;
+            localStorage.setItem('vt_admin_password', next);
+            e.target.reset();
+            showToast('Contrase帽a de administrador actualizada', '馃攼');
+        }
+
+        function handleMultiImageUpload(event, targetTextareaId) {
+            const files = Array.from(event.target.files || []);
+            if (!files.length) return;
+            const targetEl = document.getElementById(targetTextareaId);
+            let loadedCount = 0;
+
+            files.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function (ev) {
+                    const currentVal = targetEl.value.trim();
+                    targetEl.value = currentVal ? `${currentVal}\n${ev.target.result}` : ev.target.result;
+                    loadedCount++;
+                    if (loadedCount === files.length) {
+                        renderAdminImgPreviews();
+                        showToast(`${loadedCount} foto(s) cargada(s) al art铆culo`, '馃柤锔�');
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function handleFileUploadToInput(event, targetInputId) {
+            const file = event.target.files?.[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function (ev) {
+                document.getElementById(targetInputId).value = ev.target.result;
+                showToast('Imagen cargada correctamente', '馃柤锔�');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        let toastTimer = null;
+        function showToast(msg, icon = '鉁�') {
+            const box = document.getElementById('toast-box');
+            document.getElementById('toast-msg').innerText = msg;
+            document.getElementById('toast-icon').innerText = icon;
+            box.classList.remove('hidden');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                box.classList.add('hidden');
+            }, 3400);
+        }
+
+        // Exponer funciones al 谩mbito global para eventos onclick/onsubmit
+        Object.assign(window, {
+            toggleSiteTheme,
+            filterCatalog,
+            setCurrency,
+            selectCardOption,
+            setCardGallerySlide,
+            stepCardGallerySlide,
+            addToCart,
+            removeFromCart,
+            toggleCartDrawer,
+            openCheckoutModal,
+            closeCheckoutModal,
+            recalculateCheckoutTotal,
+            processPayPalOrder,
+            closeOrderSuccessModal,
+            handleUserIconClick,
+            closeUserAuthModal,
+            switchAuthTab,
+            clearLoginError,
+            goToRegisterWithEmail,
+            handleUnifiedLogin,
+            handleCustomerRegister,
+            handleVerifyCustomerEmail,
+            openCustomerOrderDetail,
+            closeCustomerOrderDetailModal,
+            copyOrderTracking,
+            customerLogout,
+            adminLogout,
+            openSizeGuideModal,
+            closeSizeGuideModal,
+            switchSizeGuideTab,
+            openAdminModal,
+            closeAdminModal,
+            switchAdminTab,
+            toggleAdminProductTypeFields,
+            saveAdminProduct,
+            toggleProductStock,
+            renderAdminImgPreviews,
+            editAdminProduct,
+            deleteAdminProduct,
+            resetAdminProductForm,
+            addSizeGuideRow,
+            deleteSizeGuideRow,
+            saveBrandSettings,
+            saveCommsAndPaypalSettings,
+            updateOrderStatusAndNotify,
+            exportSkydropxCSV,
+            copyUsersContactList,
+            deleteRegisteredUser,
+            addAdminIgPost,
+            deleteAdminIgPost,
+            saveAdminFaq,
+            editAdminFaq,
+            deleteAdminFaq,
+            resetAdminFaqForm,
+            handleAdminPasswordChange,
+            handleMultiImageUpload,
+            handleFileUploadToInput
+        });
+
+        applySiteTheme(localStorage.getItem('vt_site_theme') || 'dark');
+        updateAdminStateUI();
+        renderStorefront();
+        renderCart();
+    </script>
+</body>
+</html>
